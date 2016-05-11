@@ -1,0 +1,200 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title></title>
+    <script src="monitor/js/jquery-1.11.3.min.js"></script>
+    <link href="monitor/css/public.css" rel="stylesheet" media="screen" />
+    <!--<script src="monitor/js/jquery.md5.js"></script>-->
+    <!--<script src="monitor/js/public.js"></script>-->
+
+    <script>
+        /** 
+  * 获取指定URL的参数值 
+
+  */
+        function getUrlParam(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+            var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+            if (r != null) return unescape(r[2]); return null; //返回参数值
+        }
+        function login() {
+            if ($("#tbVerification").val().toLowerCase() == getCookie("validateNum").toLowerCase()) {
+                $.ajax({
+                    type: "POST",
+                    url: "http://localhost:27206/monitor/clamp.aspx",
+                    data: "userID=" + $("#userID").val() + "&pwd=" + $("#userPwd").val(),
+                    dataType: "text",
+                    //contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+                        if (data == "success") {
+                            console.log(document.cookie);
+                            if (getUrlParam("url") == "accountManage") {
+
+                                window.location.href = "monitor/" + getUrlParam("goto") + ".aspx";
+                            }
+                            else if (getUrlParam("url") != null) {
+                                //window.location.href = "monitor/" + getUrlParam("goto") + ".html";
+                                 location.href = getUrlParam("url");
+                                
+
+                            }
+                            else {
+                                window.location.href = "monitor/index.html";
+
+                            }
+
+
+                        }
+                        else if (data == "fail") {
+                            alert("密码错误");
+                        }
+
+                    }
+
+                });
+
+            }
+            else {
+                alert("验证码错误！");
+                $("#Image1").attr("src", "../ValidateNum.aspx?rnd=" + Math.random());
+            }
+
+
+        }
+        window.onload = function () {
+
+            $("#tbVerification").keydown(function () {
+                if (event.keyCode == "13") {//keyCode=13是回车键
+                  //  login();
+                }
+            });
+
+
+            $("#tbVerification").change(function () {
+                login();
+
+            });
+
+            $("#btnLogin").click(function () {
+
+                login();
+
+                
+
+
+            })
+
+
+        }
+        function encodeUTF8(str) {
+            var temp = "", rs = "";
+            for (var i = 0, len = str.length; i < len; i++) {
+                temp = str.charCodeAt(i).toString(16);
+                rs += "\\u" + new Array(5 - temp.length).join("0") + temp;
+            }
+            return rs;
+        }
+        function getCookie(name) {
+            var arr, reg = new RegExp("(^|)" + name + "=([^;]*)(;|$)")
+            if (arr = document.cookie.match(reg))
+                return unescape(arr[2]);
+            else
+                return null;
+        }
+        $(document).ready(function () {
+
+            $("#register").click(function () {
+               // location.href = "monitor/register.aspx";
+                alert("未开放");
+            });
+
+            $("img").click(function () {
+                var img = document.getElementById("Image1");
+                img.src = "../ValidateNum.aspx?rnd=" + Math.random();
+            });
+
+
+        });
+    </script>
+    <style>
+        .login {
+            width: 95%;
+            max-width: 400px;
+            max-height: 320px;
+            height: 60%;
+            margin: 15% auto;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-color: #FFF;
+            -webkit-border-radius: 1.5%;
+            -moz-border-radius: 1.5%;
+            border-radius: 1.5%;
+            -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.065);
+            -moz-box-shadow: 0 1px 4px rgba(0,0,0,.065);
+            box-shadow: 0 1px 4px rgba(0,0,0,.065);
+            border: 1px solid #e5e5e5;
+        }
+
+            .login li {
+                width: 85%;
+                height: 2rem;
+                margin: 3% 7.5%;
+            }
+
+        input::-webkit-input-placeholder {
+            color: #e5e5e5;
+        }
+
+        .login li:nth-child(1) {
+            margin-top: 6%;
+            font-size: 1.4rem;
+        }
+
+        .login li input {
+            width: 98%;
+            height: 2rem;
+            padding-left: 2%;
+            font-size: 1rem;
+        }
+
+        .login li:nth-child(5) input {
+            width: 100%;
+            height: 2rem;
+            margin: 0px;
+            padding: 0px;
+            text-indent: 0em;
+        }
+
+        .login li:last-child {
+            color: #a5a5a5;
+            cursor: pointer;
+        }
+
+        #tbVerification {
+            width: 60%;
+        }
+
+        img {
+            padding-top: 1.4%;
+            padding-left: 5.7%;
+        }
+
+        #tbUserPwd {
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+        <div class="login">
+            <ul>
+                <li>登 录</li>
+                <li><input ID="userID"  Type="text" placeholder="用户名" /></li>
+                <li><input ID="userPwd"  Type="password" placeholder="密 码" /></li>
+                <li><input ID="tbVerification"  Type="text" placeholder="验证码" /> <img ID="Image1" src="ValidateNum.aspx" /></li>
+                <li><input id="btnLogin" type="button" value="登 陆" class="btn btn-large btn-primary"  onclick="btnLogin_Click" /></li>
+                <li id="register">快速注册</li>
+            </ul>
+        </div>
+</body>
+</html>

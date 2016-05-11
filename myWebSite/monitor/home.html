@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>HOME</title>
+    <script src="jquery-1.11.3.min.js"></script>
+
+    <style>
+        .homepageBackground {
+            background-color: #404040;
+        }
+
+        .homepage {
+            background-image: url(homepage.png);
+            background-color: #404040;
+            background-repeat: no-repeat;
+            width: 633px;
+            height: 427px;
+            margin: 50px auto;
+        }
+
+        .brand {
+            margin: 10px 0px 0px 10px;
+            width: 182px;
+            height: 32px;
+            background-image: url(brand.png);
+        }
+
+        .homepage ul {
+            width: 236px;
+            height: 177px;
+            padding: 0px;
+            margin: 0px;
+            float: left;
+            -webkit-border-radius: 30px;
+            -moz-border-radius: 30px;
+            border-radius: 30px;
+        }
+
+            .homepage ul:nth-child(1) {
+                margin: 88px 0px 0px 8px;
+            }
+
+            .homepage ul:nth-child(2) {
+                margin: 5px 0px 0px 140px;
+            }
+
+            .homepage ul:nth-child(3) {
+                margin: 55px 0px 0px 100px;
+            }
+
+            .homepage ul:hover {
+                cursor: pointer;
+                background-color: rgba(0,0,0,0.4);
+            }
+    </style>
+    <script>
+
+        $(document).ready(function () {
+            $($('.homepage ul:nth-child(2)')).click(function () {
+                if (getCookie("userID") != null)
+                    location.href = "monitor/index.html";
+                else
+                    location.href = "login.aspx";
+
+            });
+            $($('.homepage ul:nth-child(3)')).click(function () {
+                if (getCookie("userID") != null)
+                    location.href = "monitor/afterSale.html";
+                else
+                    location.href = "login.aspx";
+
+            });
+
+
+
+            function getCookie(name) {
+                var arr, reg = new RegExp("(^|)" + name + "=([^;]*)(;|$)")
+                if (arr = document.cookie.match(reg))
+                    return unescape(arr[2]);
+                else
+                    return null;
+            }
+
+
+        });
+    </script>
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?fc9755d9a5592c2b2066194aeb61c02e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+
+
+<body class="homepageBackground">
+
+<div class="brand">
+</div>
+<div class="homepage">
+<ul>
+</ul>
+<ul>
+</ul>
+<ul>
+</ul>
+</div>
+</body>
+</html>

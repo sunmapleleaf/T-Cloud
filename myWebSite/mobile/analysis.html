@@ -1,0 +1,594 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>无标题文档</title>
+    <!--<script src=js/jquery-1.11.3.min.js></script>-->
+    <script src=js/echarts.min.js></script>
+    <script src="js/dataTool.js"></script>
+
+
+
+    <!-- 加载SUI -->
+    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css" />
+    <script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+
+    <!-- 加载公共部分 -->
+    <link href="css/public.css" rel="stylesheet" media="screen" />
+    <script src="js/public.js"></script>
+</head>
+
+
+
+<body>
+    <!-- page集合的容器，里面放多个平行的.page，其他.page作为内联页面由路由控制展示 -->
+    <div class="page-group">
+        <!-- 单个page ,第一个.page默认被展示-->
+        <div class="page">
+            <!-- 标题栏 -->
+            <header class="bar bar-nav">
+                <a class="icon icon-me pull-left open-panel"></a>
+                <h1 class="title">统 计</h1>
+            </header>
+
+            <!-- 工具栏 -->
+            <nav class="bar bar-tab">
+                <a class="tab-item external " href="index.html">
+                    <span class="icon icon-computer"></span>
+                    <span class="tab-label">机器</span>
+                </a>
+                <a class="tab-item external" href="mould.html">
+                    <span class="icon icon-app"></span>
+                    <span class="tab-label">模具</span>
+                </a>
+                <a class="tab-item external active" href="analysis.html">
+                    <span class="icon icon-share"></span>
+                    <span class="tab-label">统计</span>
+                </a>
+                <a class="tab-item external" href="auxiliary.html">
+                    <span class="icon icon-code"></span>
+                    <span class="tab-label">GPS</span>
+                </a>
+            </nav>
+
+            <!-- 这里是页面内容区 -->
+            <div class="content">
+      
+                <div class="buttons-tab fixed-tab" data-offset="44">
+                    <a href="#tab1" class="tab-link active button">质 量</a>
+                    <a href="#tab2" class="tab-link button">使 用</a>
+                    <a href="#tab3" class="tab-link button">状 态</a>
+                    <a href="#tab4" class="tab-link button">异 常</a>
+
+
+                </div>
+                    <div class="tabs">
+                        <div id="tab1" class="tab active">
+                            <div class="content-block">
+                                <div id="line-graph" style="width: 100%;height:400px;float:left"></div>
+
+                               
+                            </div>
+                        </div>
+                        <div id="tab2" class="tab">
+                                <div id="pie-mould" style="width: 50%;height:400px;float:left"></div>
+                                <div id="pie-time" style="width: 50%;height:400px;float:none"></div>
+                                <script>
+                                    var h = document.getElementById('pie-mould');
+                                    var h2 = document.getElementById('pie-time');
+                                    h.style.width = h2.style.width = document.body.clientWidth - 20 + "px";
+                                    h.style.height = h2.style.height = document.body.clientHeight/2 + "px";
+                                    var option = {
+                                        title: {
+                                            text: 'DH001-001',
+                                            subtext: '生产时间',
+                                            top: 'bottom',
+                                            left: 'right'
+                                        },
+                                        tooltip: {
+                                            trigger: 'item',
+                                            formatter: "{a} <br/>{b}: {c} ({d}%)"
+                                        },
+                                        legend: {
+                                            orient: 'vertical',
+                                            x: 'left',
+                                            data: ['开模数', '未完成数']
+                                        },
+                                        series: [
+                                            {
+                                                name: 'DH001-001',
+                                                type: 'pie',
+                                                radius: ['50%', '70%'],
+                                                avoidLabelOverlap: false,
+                                                label: {
+                                                    normal: {
+                                                        show: true,
+                                                        position: 'outside',
+                                                        formatter: '{b}\n{c}'
+                                                    }
+                                                },
+                                                labelLine: {
+                                                    normal: {
+                                                        show: false
+                                                    }
+                                                },
+                                                data: [
+                                                    { value: 335, name: '开模数' },
+                                                    { value: 310, name: '未完成数' },
+                                                ]
+                                            }
+                                        ]
+                                    };
+                                    var pieMould = echarts.init(document.getElementById('pie-mould'));
+                                    pieMould.setOption(option);
+                                    var option = {
+                                        title: {
+                                            text: 'DH001-001',
+                                            subtext: '开模数',
+                                            top: 'bottom',
+                                            left: 'right'
+                                        },
+                                        tooltip: {
+                                            trigger: 'item',
+                                            formatter: "{a} <br/>{b}: {c} ({d}%)"
+                                        },
+                                        legend: {
+                                            orient: 'vertical',
+                                            x: 'left',
+                                            data: ['使用时间', '未完成时间']
+                                        },
+                                        series: [
+                                            {
+                                                name: 'DH001-001',
+                                                type: 'pie',
+                                                radius: ['50%', '70%'],
+                                                avoidLabelOverlap: false,
+                                                label: {
+                                                    normal: {
+                                                        show: true,
+                                                        position: 'outside',
+                                                        formatter: '{b}\n{c}'
+                                                    }
+
+                                                },
+                                                labelLine: {
+                                                    normal: {
+                                                        show: false
+                                                    }
+                                                },
+                                                data: [
+                                                    { value: 335, name: '使用时间' },
+                                                    { value: 310, name: '未完成时间' },
+                                                ]
+                                            }
+                                        ]
+                                    };
+                                    var pieTime = echarts.init(document.getElementById('pie-time'));
+                                    pieTime.setOption(option);
+                                </script>
+                        </div>
+                        <div id="tab3" class="tab">
+
+                                <div id="bar-usage" style="width: 100%;height:300px;float:left"></div>
+                                <script>
+                                    var h = document.getElementById('bar-usage');
+                                    h.style.width = document.body.clientWidth - 20 + "px";
+                                    h.style.height = document.body.clientHeight - 150 + "px";
+                                    var option = {
+                                        title: {
+                                            text: 'DH001-001',
+                                            subtext: '使用情况',
+                                            top: 'top',
+                                            left: 'left'
+                                        },
+                                        tooltip: {
+                                            trigger: 'axis',
+                                            axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                                                type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                                            }
+                                        },
+                                        legend: {
+                                            top:'15%',
+                                            data: ['运行', '报警', '空闲', '关机']
+                                        },
+                                        grid: {
+                                            left: '3%',
+                                            right: '4%',
+                                            bottom: '3%',
+                                            top:'25%',
+                                            containLabel: true
+                                        },
+                                        xAxis: [
+                                        {
+                                            type: 'value'
+                                        }
+                                        ],
+                                        yAxis: [
+                                        {
+                                            type: 'category',
+                                            data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+                                        }
+                                        ],
+                                        toolbox: {
+                                            feature: {
+                                                saveAsImage: {}
+                                            }
+                                        },
+                                        series: [
+                                        {
+                                            name: '运行',
+                                            type: 'bar',
+                                            stack: '总量',
+
+                                            itemStyle: { normal: { label: { show: true, position: 'insideRight' } } },
+                                            data: [320, 302, 301, 334, 390, 330, 320]
+                                        },
+                                        {
+                                            name: '报警',
+                                            type: 'bar',
+                                            stack: '总量',
+                                            itemStyle: { normal: { label: { show: true, position: 'insideRight' } } },
+                                            data: [120, 132, 101, 134, 90, 230, 210]
+                                        },
+                                        {
+                                            name: '空闲',
+                                            type: 'bar',
+                                            stack: '总量',
+                                            itemStyle: { normal: { label: { show: true, position: 'insideRight' } } },
+                                            data: [220, 182, 191, 234, 290, 330, 310]
+                                        },
+                                        {
+                                            name: '关机',
+                                            type: 'bar',
+                                            stack: '总量',
+                                            itemStyle: { normal: { label: { show: true, position: 'insideRight' } } },
+                                            data: [150, 212, 201, 154, 190, 330, 410]
+                                        }
+                                        ]
+                                    };
+                                    var barUsage = echarts.init(document.getElementById("bar-usage"));
+                                    barUsage.setOption(option);
+                                </script>
+                        </div>
+                            <div id="tab4" class="tab">
+
+                                    <div id="bar-alarm" style="width: 100%;height:400px;float:left"></div>
+                                    <script>
+                                    var h = document.getElementById('bar-alarm');
+                                    h.style.width = document.body.clientWidth-10 + "px";
+                                    h.style.height = document.body.clientHeight - 150 + "px";
+                                    option = {
+                                        tooltip: {
+                                            trigger: 'axis',
+                                            axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                                                type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                                            }
+                                        },
+                                        legend: {
+                                            left: '0%',
+                                            orient: 'vertical',
+                                            align: 'left',
+                                            itemGap: 10,
+                                            data: ['马达未开', '温度异常', '安全门未关', '润滑未到位', '后安全门未关', '注射超时', '合模超时', '合模未到位', '其他']
+                                        },
+                                        grid: {
+                                            left: '30%',
+                                            right: '0%',
+                                            bottom: '3%',
+                                            top:'3%',
+                                            containLabel: true
+                                        },
+                                        xAxis: [
+                                            {
+                                                type: 'category',
+                                                data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+                                            }
+                                        ],
+                                        yAxis: [
+                                            {
+                                                type: 'value'
+                                            }
+                                        ],
+                                        series: [
+                                            {
+                                                name: '马达未开',
+                                                type: 'bar',
+                                                data: [32, 33, 31, 34, 39, 33, 32]
+                                            },
+                                            {
+                                                name: '温度异常',
+                                                type: 'bar',
+                                                stack: '类型一',
+                                                data: [12, 12, 11, 13, 9, 23, 21]
+                                            },
+                                            {
+                                                name: '安全门未关',
+                                                type: 'bar',
+                                                stack: '类型一',
+                                                data: [22, 18, 19, 23, 29, 33, 31]
+                                            },
+                                            {
+                                                name: '润滑未到位',
+                                                type: 'bar',
+                                                stack: '类型一',
+                                                data: [15, 23, 21, 15, 19, 33, 41]
+                                            },
+                                            {
+                                                name: '后安全门未关',
+                                                type: 'bar',
+                                                data: [86, 101, 96, 102, 167, 160, 157],
+                                                markLine: {
+                                                    itemStyle: {
+                                                        normal: {
+                                                            lineStyle: {
+                                                                type: 'dashed'
+                                                            }
+                                                        }
+                                                    },
+                                                    data: [
+                                                        [{ type: 'min' }, { type: 'max' }]
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                name: '注射超时',
+                                                type: 'bar',
+                                                barWidth: 5,
+                                                stack: '类型二',
+                                                data: [62, 73, 70, 73, 109, 113, 112]
+                                            },
+                                            {
+                                                name: '合模超时',
+                                                type: 'bar',
+                                                stack: '类型二',
+                                                data: [12, 13, 10, 13, 29, 23, 22]
+                                            },
+                                            {
+                                                name: '合模未到位',
+                                                type: 'bar',
+                                                stack: '类型二',
+                                                data: [6, 7, 7, 7, 19, 13, 11]
+                                            },
+                                            {
+                                                name: '其他',
+                                                type: 'bar',
+                                                stack: '类型二',
+                                                data: [6, 8, 9, 8, 10, 11, 12]
+                                            }
+                                        ]
+                                    };
+
+                                    var barUsage = echarts.init(document.getElementById("bar-alarm"));
+                                    barUsage.setOption(option);
+                                    </script>
+                            </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- popup, panel 等放在这里 -->
+    <div class="panel-overlay"></div>
+    <!-- Left Panel with Reveal effect -->
+    <div class="panel panel-left panel-reveal">
+        <p class="open-popup close-panel" id="userID" style="text-indent: .5em; -webkit-margin-before: .5em; -webkit-margin-after: .5em; ">未登录</p>
+
+        <div class="bar barbar-header-secondary">
+            <div class="searchbar" style="background-color: #111; border: none;">
+                <a class="searchbar-cancel">取消</a>
+
+            </div>
+        </div><br /><br />
+        <div class="content-block-title">导 航</div>
+        <div class="list-block">
+            <ul>
+                <li class="item-content close-panel" style="background-color: #111">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+
+                        <div class="item-title"><a href="home.html">首 页</a></div>
+
+                    </div>
+                </li>
+                <li class="item-content close-panel" style="background-color: #111">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+
+                        <div class="item-title"><a href="index.html">设 备</a></div>
+
+                    </div>
+                </li>
+                <li class="item-content close-panel" style="background-color: #111">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                        <div class="item-title"><a href="production.html">生 产</a></div>
+                    </div>
+                </li>
+                <li class="item-content close-panel" style="background-color: #111">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                        <div class="item-title"><a href="accountManage.html">维 护</a></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="popup popup-about" style="background-color:black;width:100%">
+        <div class="content-block">
+            <div class="card">
+
+                <div class="card-header">我的账号</div>
+                <div class="card-content">
+                    <div id="logout" class="card-content-inner">退出</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-content-inner close-popup">取消</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- 默认必须要执行$.init(),实际业务里一般不会在HTML文档里执行，通常是在业务页面代码的最后执行 -->
+    <script>$.init()</script>
+
+</body>
+</html>
+
+<script>
+    var mapingTable = { "保压切换": "injection1CutOffPosition", "螺杆终点": "injection1Cushion", "注射时间": "injection1ActMoveTime", "切换压力": "injection1CutOffPressure", "机器循环": "systemCycleTimeMachine", "周期时间": "systemShotTimeAct", "熔胶时间": "plastActMoveTime", "熔胶终点": "injection1PlastEndPosition", "最大射压": "injection1InjPeakPressure" };
+
+    getQualityData("qualityData", '{"machineIDFilter":"keba001","parameterFilter":"保压切换","datePicker_1":"2015-12-30 14:13:01.157","datePicker_2":"2016-01-04 08:58:51.183","quantity":"10"}');
+    function changeData(parameter) {
+        var statisticData = [];
+        var series = [];
+        var label = [];
+        var lineName = ["保压切换", "螺杆终点", "注射时间", "切换压力", "机器循环", "周期时间", "熔胶时间", "熔胶终点", "最大射压"];
+        var j = 0;
+        var i = 0;
+        for (var j in mapingTable) {
+            series.push({});
+            series[i].name = lineName[i];
+            series[i].type = 'line';
+            series[i].stack = '总量';
+            series[i].areaStyle = { normal: {} },
+            series[i].data = [];
+
+            i++;
+        }
+        i = 0; j = 0;
+        for (i = 0 ; i < data.length; i++) {
+            label[i] = i;
+            j = 0;
+            for (var key in mapingTable) {
+
+                series[j].data[i] = data[i][mapingTable[key]][1];
+                j++;
+            }
+
+        }
+        // 基于准备好的dom，初始化echarts实例
+        var h = document.getElementById('bar-usage');
+        h.style.width = document.body.clientWidth - 20 + "px";
+        h.style.height = document.body.clientHeight - 150 + "px";
+        var myChart = echarts.init(document.getElementById('line-graph'));
+
+        // 指定图表的配置项和数据
+        option = {
+            tooltip: {
+                trigger: 'axis'
+            },
+            toolbox: {
+                show: true,
+                orient: 'horizontal',
+                itemSize: 15,
+                itemGap: 10,
+                showTitle: true,
+                feature:
+                    {
+                        saveAsImage: {},
+                        dataView: {
+                            show: true,
+                            title: '数据',
+                            readOnly: false,
+                            lang: ['数据', '关闭', '刷新'],
+                            backgroundColor: '#fff',
+                            textareaColor: '#fff',
+                            textareaBorderColor: '#333',
+                            textColor: '#000',
+                            buttonColor: '#c23531',
+                            buttonTextColor: '#fff'
+                        }
+                    }
+            },
+            legend: {
+                data: lineName
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                top:'20%',
+                containLabel: true
+            },
+            xAxis: [
+                {
+                    type: 'category',
+                    boundaryGap: false,
+                    data: label
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value'
+                }
+            ],
+            series: series
+        };
+
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    }
+
+    function getQualityData(command, filter, option) {
+        dataRecieved = 0;
+        $.ajax({
+            type: "POST",
+            url: "http://www.tnet.space/monitor/clamp.aspx",
+            //url: "clamp.aspx",
+            data: "command=" + command + "&filter=" + filter,
+            dataType: "json",
+            //contentType: "application/json; charset=utf-8",
+
+            success: function (msg) {
+                if (option == 2) {
+
+                    data2 = eval(msg);
+                }
+                else {
+                    data = eval(msg);
+                    var statisticData = new Array();
+                    filterJson = JSON.parse(filter);
+                    if (filterJson.hasOwnProperty("saveData")) {
+                        location.href = "../monitor/quality.xlsx";
+                        $("#saveData").addClass("btn-success");
+
+                    }
+                    $('.demo').empty();
+                    $('.demo').append('<table id="thetable" cellspacing="0" cellpadding="0"><thead><tr><td>产品编号</td><td>工艺名称</td><td>保压切换</td><td>螺杆终点</td><td>注射时间</td><td>切换压力</td><td>机器循环</td><td>周期时间</td><td>熔胶时间</td><td>熔胶终点</td><td>最大射压</td></tr></thead><tbody></tbody></table>');
+                    for (var i = 0; i < data.length; i++) {
+                        var appendData = "<tr><td>" + data[i]["systemShotCounterAct"][1] + "</td>";
+                        if ("moldDataName" in data[i])
+                            appendData += "<td>" + data[i]["moldDataName"][1] + "</td>";
+                        else
+                            appendData += "<td>" + "" + "</td>";
+                        for (var tmp in mapingTable) {
+
+                            appendData += "<td>" + parseFloat(data[i][mapingTable[tmp]][1]).toFixed(3) + "</td>";
+                        }
+                        appendData += "</tr>";
+                        $('#thetable tbody').append(appendData);
+
+                    }
+                    $('#thetable tr:first-child').addClass("first");
+                    //$.fn.tableScroll({ "width": 850, "height": 150 });
+
+                    changeData(filterJson["parameterFilter"]);
+
+                }
+                dataRecieved = 1;
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+            }
+
+        });
+
+    }// JavaScript Document
+</script>
+

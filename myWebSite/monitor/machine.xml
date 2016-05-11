@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gexf xmlns="http://www.gexf.net/1.2draft" version="1.2" xmlns:viz="http://www.gexf.net/1.2draft/viz" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.2draft http://www.gexf.net/1.2draft/gexf.xsd">
+  <meta lastmodifieddate="2016-02-29">
+    <creator>Gephi 0.8.1</creator>
+    <description></description>
+  </meta>
+  <graph defaultedgetype="undirected" mode="static">
+    <attributes class="node" mode="static">
+      <attribute id="modularity_class" title="modularity_class" type="integer"></attribute>
+    </attributes>
+    <nodes>
+      <node id="27" label="监控">
+        <attvalues>
+          <attvalue for="modularity_class" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="136.8"></viz:size>
+        <viz:position x="-182.59897" y="363.14108" z="0.0"></viz:position>
+        <viz:color r="238" g="26" b="26"></viz:color>
+      </node>
+      <node id="28" label="模具">
+        <attvalues>
+          <attvalue for="modularity_class" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="55.2"></viz:size>
+        <viz:position x="-465.81036" y="770.2584" z="0.0"></viz:position>
+        <viz:color r="153" g="153" b="153"></viz:color>
+      </node>
+      <node id="29" label="顶针">
+        <attvalues>
+          <attvalue for="modularity_class" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="50.800003"></viz:size>
+        <viz:position x="-416.66852" y="567.2038" z="0.0"></viz:position>
+        <viz:color r="153" g="153" b="153"></viz:color>
+      </node>
+      <node id="30" label="中子">
+        <attvalues>
+          <attvalue for="modularity_class" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="54.0"></viz:size>
+        <viz:position x="-275.15005" y="725.04956" z="0.0"></viz:position>
+        <viz:color r="153" g="153" b="153"></viz:color>
+      </node>
+      <node id="31" label="注射">
+        <attvalues>
+          <attvalue for="modularity_class" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="52.4"></viz:size>
+        <viz:position x="-15.1223545" y="785.9972" z="0.0"></viz:position>
+        <viz:color r="153" g="153" b="153"></viz:color>
+      </node>
+      <node id="32" label="座台">
+        <attvalues>
+          <attvalue for="modularity_class" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="55.2"></viz:size>
+        <viz:position x="-471.16052" y="451.34027" z="0.0"></viz:position>
+        <viz:color r="153" g="153" b="153"></viz:color>
+      </node>
+      <node id="33" label="温度">
+        <attvalues>
+          <attvalue for="modularity_class" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="50.800003"></viz:size>
+        <viz:position x="-186.02826" y="609.0811" z="0.0"></viz:position>
+        <viz:color r="153" g="153" b="153"></viz:color>
+      </node>
+      <node id="34" label="报警">
+        <attvalues>
+          <attvalue for="modularity_class" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="55.600002"></viz:size>
+        <viz:position x="47.336914" y="592.5018" z="0.0"></viz:position>
+        <viz:color r="153" g="153" b="153"></viz:color>
+      </node>
+      <node id="35" label="统计">
+        <attvalues>
+          <attvalue for="modularity_class" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="117.2"></viz:size>
+        <viz:position x="-200.96608" y="63.58991" z="0.0"></viz:position>
+        <viz:color r="153" g="153" b="153"></viz:color>
+      </node>
+      <node id="36" label="机器使用">
+        <attvalues>
+          <attvalue for="modularity_class" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="49.6"></viz:size>
+        <viz:position x="-432.38516" y="-197.8238" z="0.0"></viz:position>
+        <viz:color r="153" g="153" b="153"></viz:color>
+      </node>
+      <node id="37" label="机器状态">
+        <attvalues>
+          <attvalue for="modularity_class" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="52.8"></viz:size>
+        <viz:position x="-544.26886" y="-59.2334" z="0.0"></viz:position>
+        <viz:color r="153" g="153" b="153"></viz:color>
+      </node>
+      <node id="38" label="机器异常">
+        <attvalues>
+          <attvalue for="modularity_class" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="52.000004"></viz:size>
+        <viz:position x="-556.8675" y="113.66362" z="0.0"></viz:position>
+        <viz:color r="153" g="153" b="153"></viz:color>
+      </node>
+      <node id="39" label="机器信息">
+        <attvalues>
+          <attvalue for="modularity_class" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="91.6"></viz:size>
+        <viz:position x="94.67327" y="146.16975" z="0.0"></viz:position>
+        <viz:color r="153" g="153" b="153"></viz:color>
+      </node>
+      <node id="40" label="基本信息">
+        <attvalues>
+          <attvalue for="modularity_class" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="48.0"></viz:size>
+        <viz:position x="407.22192" y="148.92343" z="0.0"></viz:position>
+        <viz:color r="153" g="153" b="153"></viz:color>
+      </node>
+      <node id="41" label="机器规格">
+        <attvalues>
+          <attvalue for="modularity_class" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="57.6"></viz:size>
+        <viz:position x="274.04352" y="-73.833466" z="0.0"></viz:position>
+        <viz:color r="153" g="153" b="153"></viz:color>
+      </node>
+      <node id="42" label="控制信息">
+        <attvalues>
+          <attvalue for="modularity_class" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="49.2"></viz:size>
+        <viz:position x="234.76706" y="307.7188" z="0.0"></viz:position>
+        <viz:color r="153" g="153" b="153"></viz:color>
+      </node>
+      <node id="43" label="质量">
+        <attvalues>
+          <attvalue for="modularity_class" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="50.4"></viz:size>
+        <viz:position x="-160.70044" y="-139.78058" z="0.0"></viz:position>
+        <viz:color r="153" g="153" b="153"></viz:color>
+      </node>
+    </nodes>
+    <edges>
+      <edge source="28" target="27">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="29" target="27">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="30" target="27">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="31" target="27">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="32" target="27">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="33" target="27">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="34" target="27">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="36" target="35">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="37" target="35">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="38" target="35">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="40" target="39">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="41" target="39">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="42" target="39">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="43" target="35">
+        <attvalues></attvalues>
+      </edge>
+    </edges>
+  </graph>
+</gexf>

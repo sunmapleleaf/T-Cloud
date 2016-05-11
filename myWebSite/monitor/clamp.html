@@ -1,0 +1,543 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+    <!--Jquery-->
+    <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+
+
+    <!--bootstrap-->
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+    <!-- public -->
+    <link href="css/public.css" rel="stylesheet" media="screen" />
+    <script src="js/public.js"></script>
+    <!-- special -->
+    <script src="js/clamp.js"></script>
+
+<style>
+.content-detail{
+    float:left;
+    width:80%;
+    box-sizing:border-box;
+	}
+	
+/* machine-data-bar */
+.machine-data-bar {
+    width:100%;
+	margin-top: 20px;
+	min-width: 980px;
+	float: left;
+	-webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    box-sizing:border-box;
+}
+.machine-data-bar ul {
+	list-style: none;
+	display: inline;
+}
+.machine-data-bar li {
+	text-align: left;
+	line-height: 36px;
+	width: 85px;
+	height: 37px;
+	float: left;
+	margin: 0px;
+	padding: 0px;
+	cursor:pointer;
+}
+    /*.machine-data-bar li:nth-child(1) {
+        width:8%;
+        min-width: 75px;
+        cursor: pointer;
+    }*//*
+.machine-data-bar  li:nth-child(1) i {
+	margin-left: 5px;
+}*/
+.machine-data-bar  li:nth-child(1) i {
+	margin-left: 5px;
+		margin-top: 11px;
+
+}
+
+.machine-data-bar .active {
+	position: static;
+	height: 37px;
+	color: #555;
+	background-color: #e5e5e5;
+	text-decoration: none;
+	-webkit-box-shadow: inset 0 3px 8px rgba(0,0,0,0.125);
+	-moz-box-shadow: inset 0 3px 8px rgba(0,0,0,0.125);
+	box-shadow: inset 0 3px 8px rgba(0,0,0,0.125);
+}
+.machine-data-bar .cutoff-vertical {
+	margin:4px 0px 0px 2px;
+	width: 2px;
+	height: 29px;
+	background-color: #ffffff;
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+	border-radius: 0px;
+	float: right;
+}
+.machine-data-bar .active .cutoff-vertical {
+	display:none;
+}
+
+
+	
+	
+
+.overView{
+	margin-top:10px;
+	float:left;
+    width:100%;
+	min-width:980px;
+}
+.overView .cutoffLine,.overView .above,.overView .below{
+	background-color:#dff0d8;
+	}
+.overView div{
+	float:left;
+	}
+.above {
+	text-align: left;
+    width:100%;
+	min-width: 980px;
+	height: 39px;
+	color: white;
+	font-size: 16px;
+	font-family: "黑体";
+	-webkit-border-radius: 0px 0px 0px 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+}
+.below {
+	text-align: left;
+    width:100%;
+	min-width: 980px;
+	height: 130px;
+	color: white;
+	font-size: 16px;
+	font-family: "黑体";
+	-webkit-border-radius: 0px 0px 0px 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+}
+.cutoff{
+    width:100%;
+	min-width:980px;
+	background-color:#dff0d8;
+	}
+
+.cutoffLine {
+	margin:0 1.5% 0 1.5%;
+	width: 97%;
+	height: 1px;
+	background-color:#BFBFBF;
+
+ overflow:hidden;
+	background-image: url(assets/cutoffLine813.png);
+	background-repeat: repeat;
+}
+.colorTedericBlue {
+	background-color: #015097;
+}
+.color-tederic-gray {
+	background-color: #BFBFBF;
+}
+.circle {
+	float:left;
+	width: 14px;
+	height: 14px;
+	background: red;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
+}
+.above ul{
+	margin:12px 0px 0px 20px;
+	}
+.above li:first-child{
+	margin:2px 4px 0px 0px;
+	}
+
+.info{
+	margin:12px 0px 0px 50px;
+	}
+.info td{
+	height:26px;
+	}
+.info div{
+	width:80px;
+	text-align:right;
+	}
+.info table td:nth-child(2n) div{
+	margin-right:20px;
+	width:150px;
+	text-align:left;
+	}
+
+
+
+.mold-data{
+    width:80%;
+	min-width:980px;
+	float:left;
+	color:#999;
+    box-sizing:border-box;
+	}
+.mold-data-title{
+    width:100%;
+	margin-top: 10px;
+	min-width: 980px;
+	float: left;
+    box-sizing:border-box;
+	}
+.mold-data-title li:nth-child(1){
+	float:left;
+	margin:10px 0px 0px 20px;
+}
+.mold
+{
+	float:left;
+	width:100%;
+    min-width:980px;
+	min-height:175px;
+	margin-top:-1px;
+	padding:2%;
+	background-color:white;
+	border: 1px solid #d4d4d4;
+    box-sizing:border-box;
+
+}
+.mold td{
+	padding:0px 5px 0px 0px;
+	width:90px;
+	text-align:center;
+	}
+.mold table tr:nth-child(n+2)/*第2行以后高度为30*/
+{
+	height:30px;
+	}	
+.mold table tr td:nth-child(1)/*第1列*/
+{
+	text-align:left;
+	width:100px;
+}
+.mold table tr td:nth-child(7)/*第7列*/
+{
+	text-align:right;
+	width:150px;
+}
+.mold  table tr td:nth-child(8) > input/*第8列*/
+{
+  text-align:right;
+}
+.mold table tr:nth-child(2) td:last-child input,.mold table tr:nth-child(3) td:last-child input
+{
+	width:25px;
+	}
+
+.mold input{
+	height:25px;
+	}
+</style>
+<style type="text/css">
+
+
+
+
+#skill  { 
+	height:6px; 
+    width:77px;
+	list-style:none; 
+	margin-top:5px;
+	margin-left:5px;
+	margin-right:10px;
+	padding:0px;
+	background:#fafafa; 
+	border-radius:3px; 
+	border-left:1px solid #fff; 
+	border-top:1px solid #fff; 
+	border-right:1px solid #fff; 
+	border-bottom:1px solid #fff;  
+}
+#skill li{
+	position:relative;
+	width:75px;
+	height:6px;
+	}
+.expand { 
+	height:4px; 
+	margin:1px; 
+	/*background:#FC0;*/ 
+	background:blue; 
+	position:absolute;
+	box-shadow:0px 0px 10px 1px rgba(0,198,255,0.4);
+	border-radius:2px; 
+}
+
+</style>
+
+
+</head>
+<body>
+
+    <div id="myexample">
+        <nav class="navbar navbar-default" role="navigation">
+            <ul class="nav navbar-nav">
+                <li><div id="logo"></div><a class="tCloud"></a></li>
+                <li><a href="../home.html"><div class="icon-nav0"></div><span>首 页</span></a></li>
+                <li><a href="index.html"><div class="icon-nav1"></div><span>生产监控</span></a></li>
+                <li class="active"><a href="production.html"><div class="icon-nav2"></div><span>生产管理</span></a></li>
+                <li><a href="equipment.html"><div class="icon-nav3"></div><span>设备管理</span></a></li>
+                <li><a href="afterSale.html"><div class="icon-nav4"></div><span>设备维护</span></a></li>
+                <li><a href="mould.html"><div class="icon-nav5"></div><span>工艺管理</span></a></li>
+                <li><a href="statistics.html"><div class="icon-nav6"></div><span>数据统计</span></a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a id="action-1" href="#">信息</a></li>
+                        <li><a>退出</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+<div class="content">
+<div class="side-bar">
+  <div class="side-bar-inner">
+    <li class="active"> <a href="index.html"><i class="icon-chevron-right"></i>塑 机</a> </li>
+    <li> <a href="analysisAlarm.html"><i class="icon-chevron-right"></i>统计分析</a> </li>
+    <li> <a href="mould.html"><i class="icon-chevron-right"></i>成型工艺</a> </li>
+    <li> <a href="auxiliary.html"><i class="icon-chevron-right"></i>辅助设备</a> </li>
+
+    <!--<li> <a href="gps.html"><i class="icon-chevron-right"></i>GPS</a> </li>-->
+    
+    </ul>
+  </div>
+</div>
+<div class="content-detail">
+<div class="machine-data-bar bar-background">
+  <ul>
+    <li><div><i class="icon-chevron-left hide-sidebar"></i> <i class="icon-chevron-right show-sidebar" style="display:none;"></i></div></li>
+    <li class="active">
+      <div class="tederic-image-mold"></div>
+      模 具<!--<i class="cutoff-vertical"></i>--></li>
+    <li>
+      <div class="tederic-image-ejector"></div>
+      顶 针<!--<i class="cutoff-vertical">--></i></li>
+    <li>
+      <div class="tederic-image-core"></div>
+      中 子<!--<i class="cutoff-vertical">--></i></li>
+    <li>
+      <div class="tederic-image-injection"></div>
+      注 射<!--<i class="cutoff-vertical">--></i></li>
+    <li>
+      <div class="tederic-image-carriage"></div>
+      座 台<!--<i class="cutoff-vertical"></i>--></li>  
+    <li>
+      <div class="tederic-image-temperature"></div>
+      温 度<!--<i class="cutoff-vertical"></i>--></li>     
+
+  </ul>
+</div>
+
+<div class="overView">
+   <div class="above">
+   <ul>
+   <li class="circle"></li><li id="machineID"></li>
+</ul>
+      </div>
+      <div class="cutoff"><li class="cutoffLine"></li></div>
+      <div class="below color-tederic-gray">
+      <div class="info">
+    <table >
+  <tr>
+    <td><div >订单号：</div></td>
+    <td><div id="orderNumber"></div></td>
+    <td><div >控制器：</div></td>
+    <td><div id="controllerType"></div></td>
+  </tr>
+  <tr>
+    <td><div >产品名称：</div></td>
+    <td><div id="moldDataName"></div></td>
+    <td><div>状态：</div></td>
+    <td><div id="connStatus"></div></td>
+  </tr>
+  <tr>
+    <td><div >产品数量：</div></td>
+    <td><div id="productCounterAct"></div></td>
+    <td><div >时间：</div></td>
+    <td><div id="timestamp"></div></td>
+  </tr>
+  <tr>
+    <td><div>循环周期：</div></td>
+    <td><div id="lastCycleTime"></div></td>
+  </tr>
+</table>
+</div>
+<div id="machiePicture" style="width:119px;height:66px;margin:10px 10px 10px 60px;background-image:url(assets/machine.png)"></div>
+<div style="margin:0px 0px 0px 60px;"><table width="0" border="0">
+  <tr>
+    <td>模具</td>
+    <td><ul id="skill"><li><span class="expand progressMove1"></span></li></ul></td>
+    <td>顶针</td>
+    <td><ul id="skill"><li><span class="expand progressMove2"></span></li></ul></td>
+  </tr>
+  <tr>
+    <td>注射</td>
+    <td><ul id="skill"><li><span class="expand progressMove3"></span></li></ul></td>
+    <td>座台</td>
+    <td><ul id="skill"><li><span class="expand progressMove4"></span></li></ul></td>
+  </tr>
+</table>
+</div>
+</div>
+<!--/*<div class="pie" id="keba002">
+30%
+</div>*/-->
+</div>
+    
+</table>
+</div>
+
+<div class="mold-data">
+<ul class="mold-data-title bar-background">
+<li >合 模</li>
+</ul>
+
+<ul class="mold">
+<table>
+  <tr>
+    <td>&nbsp;</td>
+    <td>1</td>
+    <td>2</td>
+    <td>3</td>
+    <td>模 保</td>
+    <td>高 压</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>流量 %</td>
+    <td class="moldCloseVelocity"><input readonly="readonly"/></td>
+    <td class="moldCloseVelocity"><input readonly="readonly"/></td>
+    <td class="moldCloseVelocity"><input readonly="readonly"/></td>
+    <td class="moldCloseVelocity"><input readonly="readonly"/></td>
+    <td class="moldCloseVelocity"><input readonly="readonly"/></td>
+    <td >快速合模</td>
+    <td class="moldFastClose"><input readonly="readonly"/></td>
+    <td class="moldFastClose"><input readonly="readonly"/></td>
+  </tr>
+  <tr>
+    <td>压力 bar</td>
+    <td class="moldClosePressure"><input readonly="readonly"/></td>
+    <td class="moldClosePressure"><input readonly="readonly"/></td>
+    <td class="moldClosePressure"><input readonly="readonly"/></td>
+    <td class="moldClosePressure"><input readonly="readonly"/></td>
+    <td class="moldClosePressure"><input readonly="readonly"/></td>
+    <td>使用开模阀做差动</td>
+    <td class="useOpenVavleAsFastClose"><input readonly="readonly"/></td>
+    <td class="useOpenVavleAsFastClose"><input readonly="readonly"/></td>
+  </tr>
+  <tr>
+    <td>位置 mm</td>
+    <td><input readonly="readonly"/></td>
+    <td class="moldClosePosition"><input readonly="readonly"/></td>
+    <td class="moldClosePosition"><input readonly="readonly"/></td>
+    <td class="moldClosePosition"><input readonly="readonly"/></td>
+    <td class="moldClosePosition"><input readonly="readonly"/></td>
+    <td>周期延时</td>
+    <td class="cycleDelayAct"><input readonly="readonly"/></td>
+    <td class="cycleDelaySet"><input readonly="readonly"/></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>模保延时</td>
+    <td  class="moldProtectTimeAct"><input readonly="readonly"/></td>
+    <td  class="moldProtectTimeSet"><input readonly="readonly"/></td>
+  </tr>
+</table>
+
+</ul>
+<ul class="mold-data-title bar-background">
+<li>开 模</li>
+</ul>
+<ul class="mold">
+<table>
+  <tr>
+    <td>&nbsp;</td>
+    <td>开模终</td>
+    <td>4</td>
+    <td>3</td>
+    <td>2</td>
+    <td>1</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>流量 %</td>
+    <td class="moldOpenVelocity"><input readonly="readonly"/></td>
+    <td class="moldOpenVelocity"><input readonly="readonly"/></td>
+    <td class="moldOpenVelocity"><input readonly="readonly"/></td>
+    <td class="moldOpenVelocity"><input readonly="readonly"/></td>
+    <td class="moldOpenVelocity"><input readonly="readonly"/></td>
+    <td>快速开模</td>
+    <td class="moldFastOpen"><input readonly="readonly"/></td>
+    <td class="moldFastOpen"><input readonly="readonly"/></td>
+  </tr>
+  <tr>
+    <td>压力 bar</td>
+    <td class="moldOpenPressure"><input readonly="readonly"/></td>
+    <td class="moldOpenPressure"><input readonly="readonly"/></td>
+    <td class="moldOpenPressure"><input readonly="readonly"/></td>
+    <td class="moldOpenPressure"><input readonly="readonly"/></td>
+    <td class="moldOpenPressure"><input readonly="readonly"/></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>位置 mm</td>
+    <td class="moldOpenPosition"><input readonly="readonly"/></td>
+    <td class="moldOpenPosition"><input readonly="readonly"/></td>
+    <td class="moldOpenPosition"><input readonly="readonly"/></td>
+    <td class="moldOpenPosition"><input readonly="readonly"/></td>
+    <td class="moldOpenPosition"><input readonly="readonly"/></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
+</ul>
+</div>
+</div>
+</div>
+</body>
+</html>

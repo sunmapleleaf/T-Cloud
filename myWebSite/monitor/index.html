@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8;IE=Edge" />
+    <title>index</title>
+    <!--Jquery-->
+    <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+
+
+    <!--bootstrap-->
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+    <!-- public -->
+    <link href="css/public.css" rel="stylesheet" media="screen" />
+    <script src="js/public.js"></script>
+    <!-- echarts -->
+    <script src="js/echarts.min.js"></script>
+    <!-- special -->
+    <link href="css/index.css" rel="stylesheet" media="screen" />
+    <script src="js/index.js"></script>
+
+    <style>
+        #test {
+            transform: rotate(-90deg);
+            -ms-transform: rotate(-90deg); /* IE 9 */
+            -moz-transform: rotate(-90deg); /* Firefox */
+            -webkit-transform: rotate(-90deg); /* Safari 和 Chrome */
+            -o-transform: rotate(-90deg); /* Opera */
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="myexample">
+        <nav class="navbar navbar-default" role="navigation">
+            <ul class="nav navbar-nav">
+                <li ><div id="logo"></div><a class="tCloud"></a></li>
+                <li><a href="../home.html"><div class="icon-nav0"></div><span>首 页</span></a></li>
+                <li class ="active"><a href="index.html"><div class="icon-nav1"></div><span>生产监控</span></a></li>
+                
+                <li><a href="production.html"><div class="icon-nav2"></div><span>生产管理</span></a></li>
+        <li><a href="equipment.html"><div class="icon-nav3"></div><span>设备管理</span></a></li>
+        <li><a href="afterSale.html"><div class="icon-nav4"></div><span>设备维护</span></a></li>
+        <li><a href="#"><div class="icon-nav5"></div><span>工艺管理</span></a></li>
+        <li><a href="statistics.html"><div class="icon-nav6"></div><span>数据统计</span></a></li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a id="action-1" href="#">信息</a></li>
+                <li><a>退出</a></li>
+
+            </ul>
+        </li>
+        </ul>
+        </nav>
+    </div>
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="content">
+        <div class="side-bar">
+            <ul class="side-bar-inner">
+                <li class="active"> <a href="index.html"><i class="icon-chevron-right"></i>塑 机</a> </li>
+                <li> <a href="analysisAlarm.html"><i class="icon-chevron-right"></i>统计分析</a> </li>
+                <li> <a href="mould.html"><i class="icon-chevron-right"></i>成型工艺</a> </li>
+                <li> <a href="auxiliary.html"><i class="icon-chevron-right"></i>辅助设备</a> </li>
+            </ul>
+        </div>
+        <div class="outline">
+            <div class="outlineLeft"> <p>统 计</p></div>
+            <div class="outlineRight">
+                <div id="histogram" style="width:50%;height:250px;float:left"></div>
+
+                <div id="pie" style="width:50%;height:250px;float:left"></div>
+
+                <input type="button" style="margin:20px;font-family:黑体;" value="短信报告" class="btn btn-success" data-toggle="modal"
+                       data-target="#myModal" id="btnModal" />
+            </div>
+        </div>
+
+        <div class="filter-bar bar-background" style="display:none">
+            <ul>
+                <li> <div><i class="icon-th-list"></i></div></li>
+                <li class="active">
+                    <div class="square"></div>
+                    连 接
+                </li>
+                <li>
+                    <div class="square"></div>
+                    断 开
+                </li>
+                <li>
+                    <div class="square"></div>
+                    报 警
+                </li>
+                <li>
+                    <div class="square"></div>
+                    空 闲
+                </li>
+                <li>
+                    <div class="search">
+                        <input type="text" name="searchIpt" value="" />
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+
+
+
+
+    </div>
+
+
+    <!-- 模态框（Modal） -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close"
+                            data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        短信报告
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <table>
+                        <tr>
+                            <td>电话&nbsp</td>
+                            <td><input type="text" id="telephone" value="13575490571" style="width:150px" /></td>
+
+                        </tr>
+                        <tr>
+                            <td style="padding-top:10px">验证码&nbsp</td>
+                            <td style="padding-top:10px"><input type="text" id="validateNum" value="" style="width:80px" /><img style="width:50px;height:20px;margin-left:10px" id="validateNumID" src='http://www.tnet.space//ValidateNum.aspx' alt="验证码" /></td>
+
+                        </tr>
+                    </table>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default"
+                            data-dismiss="modal" style="float:left">
+                        关闭
+                    </button>
+                    <button type="button" style="float:left" class="btn btn-primary" onclick="sendNumber();">
+                        获得报告
+                    </button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+
+
+</body>
+</html>

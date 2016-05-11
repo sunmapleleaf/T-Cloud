@@ -1,0 +1,224 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+
+<title>gps</title>
+    <!--Jquery-->
+    <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+
+
+    <!--bootstrap-->
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+    <!-- public -->
+    <link href="css/public.css" rel="stylesheet" media="screen" />
+    <script src="js/public.js"></script>
+
+
+
+	<style type="text/css">
+     #allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+    #map1_container{width:100%;height:50%;float:left;overflow: hidden;margin:0;}
+    #allmap{
+      
+		width:100%;
+		height:100%;
+                min-width:1220px;
+    overflow: hidden;position:absolute;
+              top:37px;
+              left:0px;
+    z-index:-10;
+		float:left;
+	}
+</style>
+<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=Gjd6tCKmDQli7AfGMtl5m67b&s=1"></script>
+
+</head>
+<body>
+
+
+    <div id="myexample">
+        <nav class="navbar navbar-default" role="navigation">
+            <ul class="nav navbar-nav">
+                <li id="logo"></li>
+                <li><a href="../home.html">首 页</a></li>
+                <li class="active"><a href="index.html">设 备</a></li>
+                <li><a href="production.html">生 产</a></li>
+                <li><a href="afterSale.html">维 护</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a id="action-1" href="#">信息</a></li>
+                        <li><a href="#">退出</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+<div class="content">
+<div class="side-bar">
+  <div class="side-bar-inner">
+    <li> <a href="index.html"><i class="icon-chevron-right"></i>塑 机</a> </li>
+    <li> <a href="analysisAlarm.html"><i class="icon-chevron-right"></i>统计分析</a> </li>
+    <li> <a href="mould.html"><i class="icon-chevron-right"></i>成型工艺</a> </li>
+    <li> <a href="auxiliary.html"><i class="icon-chevron-right"></i>辅助设备</a> </li>
+
+    <li class="active"> <a href="gps.html"><i class="icon-chevron-right"></i>GPS</a> </li>
+    
+    </ul>
+  </div>
+</div>
+
+</div>
+<div  id="allmap" > </div>
+</body>
+</html>
+<script type="text/javascript">
+
+
+  
+    // 百度地图API功能
+    var map = new BMap.Map("allmap");
+    var point = new BMap.Point(120.355071, 30.341552);
+    map.centerAndZoom(point, 12);
+
+var marker = new BMap.Marker(point); // 创建点
+	marker.addEventListener("click",attribute);
+	map.addOverlay(marker);    //增加点
+	var label = new BMap.Label("keba001",{offset:new BMap.Size(20,-10)});
+		label.setStyle({
+			 color : "white",
+			 fontSize : "12px",
+			 height : "20px",
+			 lineHeight : "20px",
+			 fontFamily:"微软雅黑",
+                          border:"0",   
+                         backgroundColor :"rgba(0, 0, 0, 0.5)",
+			borderRadius: "4px",
+			fontWeight :"bold"
+		 });
+label.addEventListener("click", function(){  
+	 label.setContent("型号：keba001<br>-----------------------<br>控制器：keba<br>产品数:100<br>连接状态:连接");
+		label.setStyle({
+			 color : "white",
+			 fontSize : "12px",
+			 height : "110px",
+			 lineHeight : "20px",
+			 fontFamily:"微软雅黑",
+                          border:"0",   
+                         backgroundColor :"rgba(0, 0, 0, 0.5)",
+			borderRadius: "4px",
+			fontWeight :"bold"
+		 });
+      
+});  
+	marker.setLabel(label);
+
+	function attribute(){
+		var p = marker.getPosition();  //获取marker的位置
+		location.href = "clamp.html?machineID=keba001";    
+	}
+var marker1 = new BMap.Marker(new BMap.Point(120.355071+0.04, 30.341552+0.05)); // 创建点
+	marker1.addEventListener("click",attribute1);
+	map.addOverlay(marker1);    //增加点
+	var label1 = new BMap.Label("gefranVedo001",{offset:new BMap.Size(20,-10)});
+		label1.setStyle({
+			 color : "white",
+			 fontSize : "12px",
+			 height : "20px",
+			 lineHeight : "20px",
+			 fontFamily:"微软雅黑",
+                          border:"0",   
+                         backgroundColor :"rgba(0, 0, 0, 0.5)",
+			borderRadius: "4px",
+			fontWeight :"bold"
+		 });
+
+label1.addEventListener("click", function(){  
+	 label1.setContent("型号：gefranVedo001<br>--------------------------<br>控制器：gefran<br>产品数:100<br>连接状态:断开");
+		label1.setStyle({
+			 color : "white",
+			 fontSize : "12px",
+			 height : "110px",
+			 lineHeight : "20px",
+			 fontFamily:"微软雅黑",
+                          border:"0",   
+                         backgroundColor :"rgba(0, 0, 0, 0.5)",
+			borderRadius: "4px",
+			fontWeight :"bold"
+		 });
+      
+});  
+
+
+	marker1.setLabel(label1);	
+	function attribute1(){
+		var p = marker1.getPosition();  //获取marker的位置
+		location.href = "clamp.html?machineID=gefranVedo001";    
+	}
+var marker2 = new BMap.Marker(new BMap.Point(120.355071-0.01, 30.341552-0.06)); // 创建点
+	marker2.addEventListener("click",attribute2);
+	map.addOverlay(marker2);    //增加点
+	
+	function attribute2(){
+		var p = marker2.getPosition();  //获取marker的位置
+		location.href = "clamp.html?machineID=gefranPerfoma001";    
+	}
+	var label2 = new BMap.Label("gefranPerfoma001",{offset:new BMap.Size(20,-10)});
+		label2.setStyle({
+			 color : "white",
+			 fontSize : "12px",
+			 height : "20px",
+			 lineHeight : "20px",
+			 fontFamily:"微软雅黑",
+                          border:"0",   
+                         backgroundColor :"rgba(0, 0, 0, 0.5)",
+			borderRadius: "4px",
+			fontWeight :"bold"
+		 });
+
+label2.addEventListener("click", function(){  
+	 label2.setContent("型号：gefranPerfoma001<br>-----------------------------<br>控制器：gefran<br>产品数:100<br>连接状态:断开");
+		label2.setStyle({
+			 color : "white",
+			 fontSize : "12px",
+			 height : "110px",
+			 lineHeight : "20px",
+			 fontFamily:"微软雅黑",
+                          border:"0",   
+                         backgroundColor :"rgba(0, 0, 0, 0.5)",
+			borderRadius: "4px",
+			fontWeight :"bold"
+		 });
+      
+}); 
+	marker2.setLabel(label2);
+
+
+
+
+    var top_left_control = new BMap.ScaleControl({ anchor: BMAP_ANCHOR_TOP_LEFT });// 左上角，添加比例尺
+    var top_left_navigation = new BMap.t_navigationControl({ anchor:BMAP_ANCHOR_TOP_RIGHT });  //左上角，添加默认缩放平移控件
+    //map.addControl(top_left_control);
+    map.addControl(top_left_navigation);
+
+    var mapType1 = new BMap.MapTypeControl({ mapTypes: [BMAP_NORMAL_MAP, BMAP_HYBRID_MAP] });
+    var mapType2 = new BMap.MapTypeControl({ anchor: BMAP_ANCHOR_TOP_RIGHT });
+    var overView = new BMap.OverviewMapControl();
+    var overViewOpen = new BMap.OverviewMapControl({ isOpen: true, anchor: BMAP_ANCHOR_BOTTOM_RIGHT });
+    //map.addControl(mapType1);          //2D图，卫星图
+   // map.addControl(mapType2);          //左上角，默认地图控件
+    map.addControl(overView);          //添加默认缩略地图控件
+    map.addControl(overViewOpen);      //右下角，打开
+
+	
+
+	
+
+</script>
+

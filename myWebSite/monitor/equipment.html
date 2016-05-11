@@ -1,0 +1,350 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>index</title>
+
+    <!--Jquery-->
+    <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+    <script src="js/moment.js"></script>
+
+
+    <!--bootstrap-->
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <link href="//cdn.bootcss.com/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <script src="//cdn.bootcss.com/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+
+    <!-- public -->
+    <link href="css/public.css" rel="stylesheet" media="screen" />
+    <script src="js/public.js"></script>
+    <style>
+        .content table input{
+            width:13px;
+            height:13px;
+            float:none;
+        }
+        a:link {
+            text-decoration: none;
+            color: #015097;
+        }
+
+        a:visited {
+            text-decoration: none;
+            color: #015097;
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: #015097;
+        }
+
+        a:active {
+            text-decoration: none;
+            color: #015097;
+        } 
+    </style>
+ 
+</head>
+
+<body>
+
+
+    <div id="myexample">
+        <nav class="navbar navbar-default" role="navigation">
+            <ul class="nav navbar-nav">
+                <li><div id="logo"></div><a class="tCloud"></a></li>
+                <li><a href="../home.html"><div class="icon-nav0"></div><span>首 页</span></a></li>
+                <li><a href="index.html"><div class="icon-nav1"></div><span>生产监控</span></a></li>
+                <li><a href="production.html"><div class="icon-nav2"></div><span>生产管理</span></a></li>
+                <li class="active"><a href="equipment.html"><div class="icon-nav3"></div><span>设备管理</span></a></li>
+                <li><a href="afterSale.html"><div class="icon-nav4"></div><span>设备维护</span></a></li>
+                <li><a href="mould.html"><div class="icon-nav5"></div><span>工艺管理</span></a></li>
+                <li><a href="statistics.html"><div class="icon-nav6"></div><span>数据统计</span></a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a id="action-1" href="#">信息</a></li>
+                        <li><a>退出</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="content">
+        <div class="side-bar">
+            <ul class="side-bar-inner">
+                <li class="active"> <a href="equipment.html"><i class="icon-chevron-right"></i>设备规格</a> </li>
+                <li> <a href="#"><i class="icon-chevron-right"></i>控制参数</a> </li>
+                <li> <a href=#><i class="icon-chevron-right"></i>统计</a> </li>
+
+            </ul>
+        </div>
+        <div style="width:80%;float:left;margin-top:20px">
+            <div style="width:100%">
+                <button type="submit" class="btn btn-default" style="float:left;margin-bottom:10px" data-toggle="modal" data-target="#myModal">修改</button>
+                <button type="submit" class="btn btn-default" style="float:left;margin-bottom:10px;margin-left:10px" data-toggle="modal" data-target="#myModal2">增加</button>
+
+                               <div class="input-group" style="float:right;width:30%">
+                    <span class="input-group-addon">厂商/机器编号</span>
+                    <input type="text" class="form-control" placeholder="泰瑞" />
+                    <span class="input-group-addon">查询</span>
+                </div>
+            </div>
+            
+            <table id="sample-table-1" class="table table-striped table-bordered table-hover black">
+                <thead>
+                    <tr>
+                        <th style="text-align:center;"><input type="checkbox" id="checkAll" name="checkAll" /></th>
+                        <th style="text-align:center;">生产厂商</th>
+                        <th style="text-align:center;">机器编号</th>
+                        <th style="text-align:center;">生产日期</th>
+                        <th style="text-align:center;">设备名称</th>
+                        <th style="text-align:center;">维护人员</th>
+                        <th style="text-align:center;">维护日期</th>
+                        <th style="text-align:center;">保养时间</th>
+                        <th style="text-align:center;">耗电量</th>
+                        <th style="text-align:center;">产能</th>
+                        <th style="text-align:center;">购买日期</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <th style="text-align:center;"><input type="checkbox" id="8a10201253d5b8190153e981e24b0040" name="orderid" value="8a10201253d5b8190153e981e24b0040" /></th>
+                        <td class="center"><a href="javascript:viewCustomer('8a10201253d5b8190153e97105060030')">泰瑞</a></td>
+                        <td class="center"><a href="javascript:viewOrderDetail('8a10201253d5b8190153e981e24b0040')">DH1055-0001</a></td>
+                        <td class="center">2016-01-02</td>
+                        <td class="center"><a href="javascript:viewProduct('8a102012539c008f0153a1e7d9690019')">两板机</a></td>
+                        <td class="center">张三</td>
+                        <td class="center">2016-01-02</td>
+                        <td class="center">2016-01-02</td>
+                        <td class="center">1023</td>
+                        <td class="center">999</td>
+                        <td class="center">
+                            2016-05-25
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="text-align:center;"><input type="checkbox" id="8a10201253d5b8190153e981e24b0040" name="orderid" value="8a10201253d5b8190153e981e24b0040" /></th>
+                        <td class="center"><a href="javascript:viewCustomer('8a10201253d5b8190153e97105060030')">泰瑞</a></td>
+                        <td class="center"><a href="javascript:viewOrderDetail('8a10201253d5b8190153e981e24b0040')">DE280-0001</a></td>
+                        <td class="center">2016-01-02</td>
+                        <td class="center"><a href="javascript:viewProduct('8a102012539c008f0153a1e7d9690019')">全电机</a></td>
+                        <td class="center">李四</td>
+                        <td class="center">2016-01-02</td>
+                        <td class="center">2016-01-02</td>
+                        <td class="center">444</td>
+                        <td class="center">999</td>
+                        <td class="center">
+                            2016-05-25
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="text-align:center;"><input type="checkbox" id="8a10201253d5b8190153e981e24b0040" name="orderid" value="8a10201253d5b8190153e981e24b0040" /></th>
+                        <td class="center"><a href="javascript:viewCustomer('8a10201253d5b8190153e97105060030')">泰瑞</a></td>
+                        <td class="center"><a href="javascript:viewOrderDetail('8a10201253d5b8190153e981e24b0040')">DE280-0002</a></td>
+                        <td class="center">2016-01-02</td>
+                        <td class="center"><a href="javascript:viewProduct('8a102012539c008f0153a1e7d9690019')">全电机</a></td>
+                        <td class="center">李四</td>
+                        <td class="center">2016-01-02</td>
+                        <td class="center">2016-01-02</td>
+                        <td class="center">111</td>
+                        <td class="center">789</td>
+                        <td class="center">
+                            2016-05-25
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="text-align:center;"><input type="checkbox" id="8a10201253d5b8190153e981e24b0040" name="orderid" value="8a10201253d5b8190153e981e24b0040" /></th>
+                        <td class="center"><a href="javascript:viewCustomer('8a10201253d5b8190153e97105060030')">泰瑞</a></td>
+                        <td class="center"><a href="javascript:viewOrderDetail('8a10201253d5b8190153e981e24b0040')">D1280-1022</a></td>
+                        <td class="center">2016-01-02</td>
+                        <td class="center"><a href="javascript:viewProduct('8a102012539c008f0153a1e7d9690019')">标准机</a></td>
+                        <td class="center">李四</td>
+                        <td class="center">2016-01-02</td>
+                        <td class="center">2016-01-02</td>
+                        <td class="center">131</td>
+                        <td class="center">1123</td>
+                        <td class="center">
+                            2016-05-25
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="text-align:center;"><input type="checkbox" id="8a10201253d5b8190153e981e24b0040" name="orderid" value="8a10201253d5b8190153e981e24b0040" /></th>
+                        <td class="center"><a href="javascript:viewCustomer('8a10201253d5b8190153e97105060030')">泰瑞</a></td>
+                        <td class="center"><a href="javascript:viewOrderDetail('8a10201253d5b8190153e981e24b0040')">D1280-1023</a></td>
+                        <td class="center">2016-01-02</td>
+                        <td class="center"><a href="javascript:viewProduct('8a102012539c008f0153a1e7d9690019')">标准机</a></td>
+                        <td class="center">李四</td>
+                        <td class="center">2016-01-02</td>
+                        <td class="center">2016-01-02</td>
+                        <td class="center">131</td>
+                        <td class="center">1123</td>
+                        <td class="center">
+                            2016-05-25
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="text-align:center;"><input type="checkbox" id="8a10201253d5b8190153e981e24b0040" name="orderid" value="8a10201253d5b8190153e981e24b0040" /></th>
+                        <td class="center"><a href="javascript:viewCustomer('8a10201253d5b8190153e97105060030')">泰瑞</a></td>
+                        <td class="center"><a href="javascript:viewOrderDetail('8a10201253d5b8190153e981e24b0040')">D1280-1023</a></td>
+                        <td class="center">2016-01-02</td>
+                        <td class="center"><a href="javascript:viewProduct('8a102012539c008f0153a1e7d9690019')">标准机</a></td>
+                        <td class="center">李四</td>
+                        <td class="center">2016-01-02</td>
+                        <td class="center">2016-01-02</td>
+                        <td class="center">131</td>
+                        <td class="center">1123</td>
+                        <td class="center">
+                            2016-05-25
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="text-align:center;"><input type="checkbox" id="8a10201253d5b8190153e981e24b0040" name="orderid" value="8a10201253d5b8190153e981e24b0040" /></th>
+                        <td class="center"><a href="javascript:viewCustomer('8a10201253d5b8190153e97105060030')">泰瑞</a></td>
+                        <td class="center"><a href="javascript:viewOrderDetail('8a10201253d5b8190153e981e24b0040')">D1280-1024</a></td>
+                        <td class="center">2016-01-02</td>
+                        <td class="center"><a href="javascript:viewProduct('8a102012539c008f0153a1e7d9690019')">两板机</a></td>
+                        <td class="center">王五</td>
+                        <td class="center">2016-01-02</td>
+                        <td class="center">2016-01-02</td>
+                        <td class="center">333</td>
+                        <td class="center">999</td>
+                        <td class="center">
+                            2016-05-25
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="text-align:center;"><input type="checkbox" id="8a10201253d5b8190153e981e24b0040" name="orderid" value="8a10201253d5b8190153e981e24b0040" /></th>
+                        <td class="center"><a href="javascript:viewCustomer('8a10201253d5b8190153e97105060030')">泰瑞</a></td>
+                        <td class="center"><a href="javascript:viewOrderDetail('8a10201253d5b8190153e981e24b0040')">DH1055-0003</a></td>
+                        <td class="center">2016-01-02</td>
+                        <td class="center"><a href="javascript:viewProduct('8a102012539c008f0153a1e7d9690019')">两板机</a></td>
+                        <td class="center">张三</td>
+                        <td class="center">2016-01-02</td>
+                        <td class="center">2016-01-02</td>
+                        <td class="center">444</td>
+                        <td class="center">999</td>
+                        <td class="center">
+                            2016-05-25
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        
+        
+
+    </div>
+    <!-- 模态框（Modal） -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close"
+                            data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        机器规格
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group">
+                        <span class="input-group-addon">机器编号</span>
+                        <input type="text" class="form-control" placeholder="TEDERIC20160004" />
+                    </div>
+                    <br />
+                    <div class="input-group">
+                        <span class="input-group-addon">维护人员</span>
+                        <input type="text" class="form-control" placeholder="泰瑞" />
+                        <span class="input-group-addon">查询</span>
+                    </div>
+                    <br />
+                    <div class="input-group">
+                        <span class="input-group-addon">设备名称</span>
+                        <input type="text" class="form-control" placeholder="泰瑞" />
+                        <span class="input-group-addon">查询</span>
+                    </div>
+                    <br />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default"
+                            data-dismiss="modal">
+                        关闭
+                    </button>
+                    <button type="button" class="btn btn-primary">
+                        提交更改
+                    </button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+
+    </div>
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close"
+                            data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        机器规格
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group">
+                        <span class="input-group-addon">机器编号</span>
+                        <input type="text" class="form-control" placeholder="TEDERIC20160004" />
+                    </div>
+                    <br />
+                    <div class="input-group">
+                        <span class="input-group-addon">维护人员</span>
+                        <input type="text" class="form-control" placeholder="泰瑞" />
+                        <span class="input-group-addon">查询</span>
+                    </div>
+                    <br />
+                    <div class="input-group">
+                        <span class="input-group-addon">设备名称</span>
+                        <input type="text" class="form-control" placeholder="泰瑞" />
+                        <span class="input-group-addon">查询</span>
+                    </div>
+                    <br />
+                    <div class="input-group">
+                        <span class="input-group-addon">购买日期</span>
+                        <input type="text" class="form-control"  id="datePicker1" placeholder="2016-04-21 12:20" />
+                    </div>
+                    <br />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default"
+                            data-dismiss="modal">
+                        关闭
+                    </button>
+                    <button type="button" class="btn btn-primary">
+                        提交更改
+                    </button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+
+    </div>
+
+</body>
+</html>
+<script>
+    if ($('#datePicker1').datetimepicker) {
+        $('#datePicker1').datetimepicker({
+        });
+
+    }
+
+</script>

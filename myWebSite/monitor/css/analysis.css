@@ -1,0 +1,253 @@
+﻿
+
+
+
+.demo{width:500px;margin:20px;}
+
+/* tablescroll */
+
+.tablescroll{font:12px normal Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;background-color:#fff;}
+
+.tablescroll td,.tablescroll_wrapper,.tablescroll_head,.tablescroll_foot{border:1px solid #ccc;}
+
+.tablescroll td{padding:5px;}
+
+.tablescroll_wrapper{border-left:0;}
+
+.tablescroll_head{font-size:12px;font-weight:bold;background-color:#eee;border-left:0;border-top:0;margin-bottom:3px;}
+.tablescroll_head td:nth-child(n+2):hover{
+	cursor:pointer}
+	.tablescroll:hover{
+	cursor:default}
+.tablescroll thead td{border-right:0;border-bottom:0;}
+
+.tablescroll tbody td{border-right:0;border-bottom:0;}
+
+.tablescroll tbody tr.first td{border-top:0;}
+
+.tablescroll_foot{font-weight:bold;background-color:#eee;border-left:0;border-top:0;margin-top:3px;}
+
+.tablescroll tfoot td{border-right:0;border-bottom:0;}
+
+
+
+
+#ui-datepicker-div{height:315; font:12px/18px Tahoma, Helvetica, Arial, Verdana, "\5b8b\4f53", sans-serif; color:#51555C;}
+.ui-timepicker-div .ui-widget-header { margin-bottom: 8px;}
+.ui-timepicker-div dl { text-align: left; }
+.ui-timepicker-div dl dt { height: 25px; margin-bottom: -25px; }
+.ui-timepicker-div dl dd { margin: 0 10px 10px 65px; }
+.ui-timepicker-div td { font-size: 90%; }
+.ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }
+.ui_tpicker_hour_label,.ui_tpicker_minute_label,.ui_tpicker_second_label,.ui_tpicker_millisec_label,.ui_tpicker_time_label{padding-left:20px}
+
+.account{
+	width:80%;
+	float:left;
+	color:#999;
+	}
+
+.account-title{
+	margin-top: 20px;
+    width:100%;
+	min-width: 980px;
+	float: left;
+	-webkit-border-radius: 4px 4px 0px 0px;
+    -moz-border-radius: 4px 4px 0px 0px;
+    border-radius: 4px 4px 0px 0px;
+    box-sizing:border-box;
+	}
+.account-title li:nth-child(1){
+	float:left;
+    /*width:75px;*/
+	padding:0px 0px 0px 0px;
+}
+.account-title li {
+        float: left;
+        line-height: 36px;
+        width: 95px;
+        text-align:center;
+        cursor:pointer;
+}
+.account-title .active {
+        position: static;
+        height: 37px;
+        color: #555;
+        background-color: #e5e5e5;
+        text-decoration: none;
+        /*-webkit-box-shadow: inset 0 3px 8px rgba(0,0,0,0.125);
+        -moz-box-shadow: inset 0 3px 8px rgba(0,0,0,0.125);
+        box-shadow: inset 0 3px 8px rgba(0,0,0,0.125);*/
+    }
+.account-title li input{
+	width:45px;
+	height:25px;
+	margin-top:5px;
+	margin-left:580px;
+	padding:0px;
+	text-indent: 0em;
+	font-family:"黑体", "Adobe Arabic";
+	
+	
+	}
+
+.account-context
+{
+	float:left;
+	width:100%;
+	height:auto;
+	margin-top:-1px;
+	padding:2% 3% 3% 3%;
+	background-color:white;
+	border: 1px solid #d4d4d4;
+    box-sizing:border-box;
+
+}
+#saveData{
+    padding:0;
+}
+
+
+.hideDlg
+    {
+        height:400px;
+        min-width:368px;
+        width:auto;
+        display:none;
+    }
+    .showDlg {
+        background-color: #ffffff;
+        border-width: 0px;
+        border-style: solid;
+        height: 400px;
+        min-width: 368px;
+        width: auto;
+        position: absolute;
+        display: block;
+        z-index: 1115;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+    }
+    .showDeck {
+        display:block;
+        top:0px;
+        left:0px;
+        margin:0px;
+        padding:0px;
+        width:100%;
+        min-width:1220px;
+		min-height:2500px;
+        height:100%;
+        position:absolute;
+        z-index:1113;
+        background:#666;
+    }
+    .hideDeck 
+    {
+        display:none;
+    }
+[id*=divBox]{
+		font-size:14px;
+		line-height:14px;
+		padding:0px;
+		margin:0px;
+		font-family:"黑体", "Adobe Arabic";
+		}
+
+    [id*=divBox] input[type=button] {
+        width: 100px;
+        height: 25px;
+        margin-top: 5px;
+        margin-left: 5px;
+        padding: 0px;
+        text-indent: 0em;
+        font-family: "黑体", "Adobe Arabic";
+    }
+    [id*=divBox] input[type=text] {
+        width: 190px;
+        height: 25px;
+        margin-top: 5px;
+        margin-left: 5px;
+        padding-left: 30px;
+        font-size: 14px;
+        font-family: "黑体", "Adobe Arabic";
+        padding-left: 15px;
+        text-indent: 0em;
+    }
+
+
+    [id*=divBox] table tr td:nth-child(1) /*第1列*/ {
+        text-align: right;
+        width: 80px;
+    }
+
+
+    [id*=divBox] table tr td:nth-child(2n+1){
+        text-align: right;
+        /*width: 80px;*/
+    }
+    [id*=divBox] table tr td:nth-child(2n){
+        padding-right:10px;
+    }
+    [id*=divBox] table tr td:last-child {
+        padding-right: 15px;
+    }
+
+.select_wrapper {
+	background: #ffffff url("arrow.png") no-repeat top 15px right 12px;
+	line-height: 25px;
+	border-radius: 4px;
+	cursor: pointer;
+	position: relative;
+	border: 1px solid #d9d9d9;
+	width:205px;
+	margin-left:5px;
+	
+
+}
+.select_wrapper:hover {
+	background: #fafafa url("arrow.png") no-repeat top 15px right 12px;
+		border: 1px solid #d9d9d9;
+		  border-color: rgba(82, 168, 236, 0.8);
+  outline: 0;
+  outline: thin dotted \9;
+  /* IE6-9 */
+
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+}
+.select_wrapper span {
+	color:#bfbfbf;
+	display: block;
+	margin: 0 30px 0 15px;
+}
+.select_wrapper .select_inner {
+	background: #fff;
+	border-radius: 4px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+	color: #687278;
+	display: none;
+	position: absolute;
+	left: 0;
+	top: -100%;
+	width: 205px;
+	z-index: 3;
+
+}
+.select_wrapper .select_inner li {
+	border-bottom: 1px solid #eee;
+	padding: 0 15px;
+}
+.select_wrapper .select_inner li:hover {
+	background: #eee;
+}
+.select_wrapper .select_inner li:last-child {
+	border: none;
+	border-radius: 0 0 4px 4px;
+}
+.select_wrapper .select_inner li:first-child {
+	border-radius: 4px 4px 0 0;
+}
+

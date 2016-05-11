@@ -1,0 +1,283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+
+<script src="jquery-1.11.3.min.js"></script>
+<script src="pieRedBlue.js"></script>
+<style>
+ul, li {
+	list-style: none;
+}
+/*.above {
+	text-align: left;
+	width: 320px;
+	height: 45px;
+	color: white;
+	font-size: 16px;
+	font-family: "黑体";
+	padding: inherit;
+	margin: inherit;
+	-webkit-border-radius: 30px 30px 0px 0px;
+	-moz-border-radius: 30px;
+}
+.below {
+	text-align: left;
+	width: 320px;
+	height: 165px;
+	color: white;
+	font-size: 16px;
+	font-family: "黑体";
+	padding: inherit;
+	margin: inherit;
+	-webkit-border-radius: 0px 0px 30px 30px;
+	-moz-border-radius: 30px;
+}
+.cutoffLine {
+	width: 321px;
+	height: 1px;
+<!--
+border-bottom:1px dashed #fff;
+-->
+ overflow:hidden;
+	background-image: url(terminal/cutoffLine813.png);
+	background-repeat: repeat 3;
+	background-position: 5px;
+}
+.colorTedericBlue {
+	background-color: #015097;
+}
+.color-tederic-gray {
+	background-color: #BFBFBF;
+}
+.circle {
+	margin-top: 13px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 23px;
+	width: 14px;
+	height: 14px;
+	background: red;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
+}
+.text-position {
+	position: absolute 23px 13px;
+}
+.info{
+	height:50px;
+	}
+.info td:first-child{	
+	width:100px;
+	}
+.info div{
+	margin:4px 0px 0px 0px;
+	text-align:left;
+	}
+.info td:first-child div{
+	text-align:right;
+	}*/
+
+.overView{
+	margin-top:10px;
+	float:left;
+	width:320px;
+}
+.overView .cutoffLine,.overView .above,.overView .below{
+	background-color:#BFBFBF;
+	}
+.overView div{
+	float:left;
+	}
+.above {
+	text-align: left;
+	width: 320px;
+	height: 44px;
+	color: white;
+	font-size: 16px;
+	font-family: "黑体";
+	-webkit-border-radius: 30px 30px 0px 0px;
+	-moz-border-radius: 30px 30px 0px 0px;
+	border-radius: 30px 30px 0px 0px;
+}
+.below {
+	text-align: left;
+	width: 320px;
+	height: 165px;
+	color: white;
+	font-size: 16px;
+	font-family: "黑体";
+	-webkit-border-radius: 0px 0px 30px 30px;
+	-moz-border-radius: 0px 0px 30px 30px;
+	border-radius: 0px 0px 30px 30px;
+}
+.cutoff{
+	width:320px;
+	background-color:#bfbfbf;
+	}
+
+.cutoffLine {
+	margin:0px 20px 0px 20px;
+	width: 280px;
+	height: 1px;
+	background-color:#f5f5f5;
+    overflow:hidden;
+	background-image: url(terminal/cutoffLine813.png);
+	background-repeat: repeat;
+}
+.colorTedericBlue {
+	background-color: #015097;
+}
+.color-tederic-gray {
+	background-color: #BFBFBF;
+}
+.circle {
+	float:left;
+	width: 14px;
+	height: 14px;
+	background: red;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
+}
+.above ul{
+	margin:13px 0px 0px 23px;
+	padding:0px;
+	}
+.above li:first-child{
+	margin:2px 4px 0px 0px;
+	}
+
+.info{
+	margin:12px 0px 0px 0px;
+	}
+.info td{
+	height:20px;
+	}
+.info div{
+	width:100px;
+	text-align:right;
+	}
+.info table td:nth-child(2n) div{
+	margin-right:20px;
+	width:100px;
+	text-align:left;
+	}
+.pie{
+		text-align:left;
+	margin:10px 0px;
+}
+</style>
+</head>
+<body  style="background-color:#f5f5f5">
+<div class="overView">
+   <div class="above">
+   <ul>
+   <li class="circle"></li><li>DH1700-0001</li>
+</ul>
+      </div>
+      <div class="cutoff"><li class="cutoffLine"></li></div>
+      <div class="below color-tederic-gray">
+      <div class="info">
+    <table >
+  <tr>
+    <td><div>订单号：</div></td>
+    <td><div>201604150001</div></td
+  ></tr>
+  <tr>
+    <td><div>产品名称：</div></td>
+    <td><div id="productName">混双色垃圾桶</div></td>
+
+  </tr>
+  <tr>
+    <td><div>产品数量：</div></td>
+    <td><div id="productQuantity">50000/100000</div></td>
+  </tr>
+  <tr>
+    <td><div>循环周期：</div></td>
+    <td><div id="periodicTime">30.24</div></td>
+  </tr>
+    <tr>
+    <td><div>控制器：</div></td>
+    <td><div>keba1000</div></td>
+  </tr>
+    <tr>
+    <td><div>状态：</div></td>
+    <td><div>连接</div></td>
+  </tr>
+</table>
+</div>
+<div class="pie" id="keba001">
+</div>
+<!--/*<div class="pie" id="keba002">
+30%
+</div>*/-->
+</div>
+    
+</table>
+</div>
+
+
+
+<!--<table width="1000px">
+  <tr>
+    <td><div class="above color-tederic-gray">
+        <table>
+          <tr>
+            <td><div class="circle"></div></td>
+            <td><div id="machineID" style="margin-left:0px;margin-top:13px;font-family:黑体">DH1700-0001</div></td>
+          </tr>
+        </table>
+      </div>
+      <div class="cutoffLine color-tederic-gray"></div>
+      <div class="below color-tederic-gray"><table>
+  <tr>
+    <td><table class="info">
+  <tr>
+    <td><div>订单号：</div></td>
+    <td><div id="orderNumber">订单号11</div></td>
+  </tr>
+  <tr>
+    <td><div>产品名称：</div></td>
+    <td><div id="productName">订单号22</div></td>
+  </tr>
+  <tr>
+    <td><div>产品数量：</div></td>
+    <td><div id="productQuantity">订单号34</div></td>
+  </tr>
+  <tr>
+    <td><div>循环周期：</div></td>
+    <td><div id="periodicTime">订单号34</div></td>
+  </tr>
+  <tr>
+    <td><div>控制器：</div></td>
+    <td><div id="controllerType">订单314号</div></td>
+  </tr>
+  <tr>
+    <td><div>状态：</div></td>
+    <td><div id="connectionStatus">订单号123：</div></td>
+  </tr>
+</table>
+</td>
+    <td ><div style="margin-top:-70px"><canvas id="completionRate" class="process" width="80px" height="80px" >22.5%</canvas></div></td>
+  </tr>
+</table>
+</div></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>-->
+</body>
+</html>

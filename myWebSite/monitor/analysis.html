@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>index</title>
+    <!--Jquery-->
+    <script type="text/javascript" src="picker/jquery-1.7.2.min.js"></script>
+
+    <!-- moment 时间处理 -->
+    <script src="js/moment.js"></script>
+    <!--bootstrap-->
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <link href="//cdn.bootcss.com/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <script src="//cdn.bootcss.com/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+
+    <!-- public -->
+    <link href="css/public.css" rel="stylesheet" media="screen" />
+    <script src="js/public.js"></script>
+    <link rel="stylesheet" type="text/css" href="picker/jquery-ui.css" />
+
+
+
+
+<link href="picker/jquery-ui-timepicker-addon.css" rel="stylesheet" media="screen"/>
+<link href="css/analysis.css" rel="stylesheet" media="screen" />
+
+<!--<script src="morris/raphael-min.js"></script>
+<script src="morris/morris.js"></script>-->
+
+
+<!--<script type="text/javascript" src="picker/jquery-ui.js"></script>
+<script type="text/javascript" src="picker/jquery-ui-slide.min.js"></script>
+<script type="text/javascript" src="picker/jquery-ui-timepicker-addon.js"></script>
+<script type="text/javascript" src="jquery.tablescroll.js"></script>-->
+<script src="js/echarts.common.min.js"></script>
+
+
+
+
+<script src="js/analysis.js"></script>
+</head>
+<body>
+
+    <div id="myexample">
+        <nav class="navbar navbar-default" role="navigation">
+            <ul class="nav navbar-nav">
+                <li><div id="logo"></div><a class="tCloud"></a></li>
+                <li><a href="../home.html"><div class="icon-nav0"></div><span>首 页</span></a></li>
+                <li class="active"><a href="index.html"><div class="icon-nav1"></div><span>生产监控</span></a></li>
+                <li><a href="production.html"><div class="icon-nav2"></div><span>生产管理</span></a></li>
+                <li><a href="equipment.html"><div class="icon-nav3"></div><span>设备管理</span></a></li>
+                <li><a href="afterSale.html"><div class="icon-nav4"></div><span>设备维护</span></a></li>
+                <li><a href="mould.html"><div class="icon-nav5"></div><span>工艺管理</span></a></li>
+                <li><a href="statistics.html"><div class="icon-nav6"></div><span>数据统计</span></a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a id="action-1" href="#">信息</a></li>
+                        <li><a>退出</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+<div class="content">
+<div class="side-bar">
+  <ul class="side-bar-inner">
+    <li> <a href="index.html"><i class="icon-chevron-right"></i>塑 机</a> </li>
+    <li class="active"> <a href="analysisAlarm.html"><i class="icon-chevron-right"></i>统计分析</a> </li>
+    <li> <a href="mould.html"><i class="icon-chevron-right"></i>成型工艺</a> </li>
+    <li> <a href="auxiliary.html"><i class="icon-chevron-right"></i>辅助设备</a> </li>
+
+    <!--<li> <a href="gps.html"><i class="icon-chevron-right"></i>GPS</a> </li>-->
+    
+    </ul>
+  </ul>
+</div>
+
+
+<div class="account" id="content">
+ <ul class="account-title bar-background">
+     <li>异 常</li><li>使 用</li><li>状 态</li><li class="active">质 量</li><li><input type="button" value="设置" class="btn btn-warning"  onclick="showDlg();" /></li>
+</ul> 
+<div class="account-context">
+    <div id="line-graph" style="width: 100%;height:400px;float:left"></div>
+
+<input type="button" class="btn btn-success" id="saveData" value="保 存" style='margin-left:60px;width:100px;height:25px;font-family:"黑体";' onclick="saveData()"/>
+</div> 
+
+
+</div>
+
+    <div id="divBox" class="hideDlg" style="" >
+            <table style="height:100%; width: 100%;" id="table1">
+                    <tr>
+                        <td style="height: 50px; text-align: center; font-size:30px;" colspan="2">设 置</td>
+                    </tr>
+                    <tr>
+                        <td>机器编号</td>
+                        <td><input type="text" id="machineIDFilter" value="keba001"></td>                                                   
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>分析参数</td>
+                        <td><select class="selectbox" id="parameterFilter" name="">
+                            <option >保压切换</option>
+                            <option >螺杆终点</option>
+                            <option >注射时间</option>
+                            <option >切换压力</option>
+                            <option >机器循环</option>
+                            <option >周期时间</option>
+                            <option >熔胶时间</option>
+                            <option >熔胶终点</option>
+                            <option >最大射压</option>
+                        	</select>
+        				</td>                                                   
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>日期</td>
+                        <td><input type="text" id="datePicker_1" value="2015-12-30 14:13:01.157"/></td>  
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                     <tr>
+                        <td>到</td>
+                        <td><input type="text" id="datePicker_2" value="2016-01-04 08:58:51.183"/></td> 
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>数量</td>
+                        <td><input type="text" id="quantity" value="10"/></td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td></td>
+                    </tr>                
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="button" name="Button1" value="确 定" class="btn btn-success" id="Button1"  onclick="sendFliter();"/>&nbsp;&nbsp;
+                            <input type="button" name="Button2" value="取 消" class="btn btn-success" id="Button2"  onclick="cancel();" />
+                            </td>
+                        <td>&nbsp;</td>
+                        <td></td>
+
+                    </tr>
+            </table>
+    </div>
+
+
+    
+</div>
+         
+
+</body>
+
+</html>

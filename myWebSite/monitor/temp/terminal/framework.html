@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="icon.css" rel="stylesheet" media="screen"></link>
+<link href="public.css" rel="stylesheet" media="screen"></link>
+<script src="jquery-1.11.3.min.js"></script>
+<style>
+/*body,html,div{ padding:0; margin:0;}
+*/
+
+.t_navigation{
+	width:100%;
+	height:37px;
+	font-size:16px;
+	font-family:"黑体";
+    background-color: #fafafa;
+    background-image: -moz-linear-gradient(top,#fff,#f2f2f2);
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(#fff),to(#f2f2f2));
+    background-image: -webkit-linear-gradient(top,#fff,#f2f2f2);
+    background-image: -o-linear-gradient(top,#fff,#f2f2f2);
+    background-image: linear-gradient(to bottom,#fff,#f2f2f2);
+    background-repeat: repeat-x;
+    border: 1px solid #d4d4d4;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff',endColorstr='#fff2f2f2',GradientType=0);
+    *zoom: 1;
+    -webkit-box-shadow: 0 1px 4px rgba(0,0,0,0.065);
+    -moz-box-shadow: 0 1px 4px rgba(0,0,0,0.065);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.065);
+/*    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;*/
+}
+
+
+
+.t_navigation ul{
+	list-style:none;
+	display:inline;
+	}
+.t_navigation ul.nav-font{
+	text-align:center;
+	padding-top:9px;
+}
+.t_navigation li{
+	line-height:30px;
+	width:85px;
+	height:37px;
+	float:left;
+	margin:0px;
+	padding:0px;
+}
+
+
+.t_navigation .logo{
+	background-image:url(brand.png);
+	background-repeat:no-repeat;
+	background-position:left;
+	
+    width:240px;
+    height:37px;
+}
+.t_navigation .frontpage{	
+    width:80px;
+}
+.t_navigation .login{
+	float:right;
+}
+.t_navigation .login ul{
+	float:left;
+	}
+.t_navigation .login  .icon-user{
+	width:14px;
+	height:14px;
+	margin-top: 9px;
+    *margin-right: .3em;
+}
+.t_navigation .active{
+	position:static;
+	width:80px;
+	height:37px;
+	        color: #555;
+			 background-color: #e5e5e5;
+        text-decoration: none;
+       
+        -webkit-box-shadow: inset 0 3px 8px rgba(0,0,0,0.125);
+        -moz-box-shadow: inset 0 3px 8px rgba(0,0,0,0.125);
+        box-shadow: inset 0 3px 8px rgba(0,0,0,0.125);
+}
+
+
+
+/** Side Bar **/
+.side-bar {
+   
+}
+.side-bar .side-bar-inner{
+	
+	  max-width: 200px;
+	  margin-top:20px;
+  padding: 0;
+  background-color: #fff;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+  -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.065);
+     -moz-box-shadow: 0 1px 4px rgba(0,0,0,.065);
+          box-shadow: 0 1px 4px rgba(0,0,0,.065);
+	}
+.side-bar-inner > li > a {
+  display: block;
+  width: 190px \9;
+  margin: 0 0 -1px;
+  padding: 8px 14px;
+  border: 1px solid #e5e5e5;
+}
+.side-bar-inner > li:first-child > a {
+  -webkit-border-radius: 6px 6px 0 0;
+     -moz-border-radius: 6px 6px 0 0;
+          border-radius: 6px 6px 0 0;
+}
+.side-bar-inner > li:last-child > a {
+  -webkit-border-radius: 0 0 6px 6px;
+     -moz-border-radius: 0 0 6px 6px;
+          border-radius: 0 0 6px 6px;
+}
+.side-bar-inner > .active > a {
+  position: relative;
+  z-index: 2;
+  padding: 9px 15px;
+  border: 0;
+  text-shadow: 0 1px 0 rgba(0,0,0,.15);
+  -webkit-box-shadow: inset 1px 0 0 rgba(0,0,0,.1), inset -1px 0 0 rgba(0,0,0,.1);
+     -moz-box-shadow: inset 1px 0 0 rgba(0,0,0,.1), inset -1px 0 0 rgba(0,0,0,.1);
+          box-shadow: inset 1px 0 0 rgba(0,0,0,.1), inset -1px 0 0 rgba(0,0,0,.1);
+}
+/* Chevrons */
+/*ivan nav箭头*/
+.side-bar-inner .icon-chevron-right {
+  float: right;
+  margin-top: 2px;
+  margin-right: -6px;
+  opacity: .25;
+}
+.side-bar-inner > li > a:hover {
+  background-color: #f5f5f5;
+}
+.side-bar-inner a:hover .icon-chevron-right {
+  opacity: .5;
+}
+.side-bar-inner .active .icon-chevron-right,
+.side-bar-inner .active a:hover .icon-chevron-right {
+  opacity: 1;
+}
+.side-bar-inner.affix {
+  top: 40px;
+}
+.side-bar-inner.affix-bottom {
+  position: absolute;
+  top: auto;
+  bottom: 270px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="t_navigation">
+<ul class="nav-font">
+<li class="logo"></li>
+<li class="active"><a href="#" >首 页</a></li>
+<li class="frontpage">监 控</li>
+<li><a href="production.html">生 产</a></li>
+<li ><a href="afterSale.html">人 员</a></li>
+<li class="login"><ul><li class="icon-user"></li>admin</ul></li>
+</ul>
+</div>
+
+<div class="side-bar">
+<div class="side-bar-inner">
+
+
+ <li class="active">
+                            <a href="index.html"><i class="icon-chevron-right"></i> 监 控</a>
+                        </li>
+                        <li>
+                            <a href="calendar.html"><i class="icon-chevron-right"></i>统计分析</a>
+                        </li>
+                        <li>
+                            <a href="stats.html"><i class="icon-chevron-right"></i>成型工艺</a>
+                        </li>
+                        <li>
+                            <a href="form.html"><i class="icon-chevron-right"></i>辅助设备</a>
+                        </li>
+                        <li>
+                            <a href="tables.html"><i class="icon-chevron-right"></i>系统设置</a>
+                        </li>
+                        <li>
+                            <a href="buttons.html"><i class="icon-chevron-right"></i>GPS</a>
+                        </li>
+                        <li>
+                            <a href="editors.html"><i class="icon-chevron-right"></i>其他</a>
+                        </li>
+                        
+                    </ul>
+
+</div>
+</div>
+
+
+</body>
+</html>

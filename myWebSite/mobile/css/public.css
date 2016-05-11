@@ -1,0 +1,28 @@
+﻿.card .card-header {
+    font-size:0.7rem;
+    line-height:1.5;
+    padding:0.75rem;
+
+}
+
+
+.panel .list-block ul:before {
+    height:2px;
+    background-color:#4b4b4b;
+}
+.panel .list-block .item-inner:after{
+        height:2px;
+
+    background-color:#4b4b4b;
+}
+
+.panel .list-block ul:after{
+        height:2px;
+
+    background-color:#4b4b4b;
+}
+
+.panel .bar:after {
+
+    height:0px;
+}

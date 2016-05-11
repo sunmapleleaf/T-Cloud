@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>HOME</title>
+<link href="public.css" rel="stylesheet" media="screen"/>
+<script src="jquery-1.11.3.min.js"></script>
+
+<style>
+
+
+.homepageBackground{
+	background-color:#404040;
+	margin:0px;
+	padding:0px;
+
+}
+ul,li{
+	list-style-type:none;
+	}
+.homepageNav{
+		width:100%;
+		}
+.homepage{
+		background-image:url(homepage.png);
+			background-color:#404040;
+	background-repeat:no-repeat;
+	width:633px;
+	height:427px;
+	margin:50px auto;
+	}
+.brand
+{
+	margin:10px 0px 0px 10px;
+	width:182px;
+	height:32px;
+	background-image:url(brand.png);
+	}
+
+.userID{
+	margin:10px 0px 0px 10px;
+	float:right;
+        
+	font-size:16px;
+	padding-right:10px;
+	color:#8c8c8c;
+	}
+.userID td:last-child{
+	width:100px;
+
+
+	}
+.userID li{
+		height:32px;
+			line-height:32px;
+	width:50px;
+	float:left;
+	cursor:pointer;
+	}
+.homepage ul{
+	width:236px;
+	height:177px;
+	padding:0px;
+	margin:0px;
+	float:left;
+		-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+	}
+.homepage ul:nth-child(1)
+{
+
+	margin:88px 0px 0px 8px;
+
+	}
+.homepage ul:nth-child(2)
+{
+
+	margin:5px 0px 0px 140px;
+
+	}
+.homepage ul:nth-child(3)
+{
+
+	margin:55px 0px 0px 100px;
+	}
+.homepage ul:hover
+{
+    cursor:pointer;
+	background-color:rgba(0,0,0,0.4);
+	}
+</style>
+<script>
+
+$(document).ready(function() {
+		$($('.homepage ul:nth-child(2)')).click(function(){
+			if (getCookie("userID") != null)
+            	location.href="monitor/index.html";
+			else
+	           	location.href="login.aspx?goto=index";
+
+	});
+		$($('.homepage ul:nth-child(3)')).click(function(){
+			if (getCookie("userID") != null)
+            	location.href="monitor/afterSale.html";
+			else
+	           	location.href="login.aspx?goto=accountManage";
+
+	});	
+		$('.userID li:nth-child(1)').click(function(){
+			if (getCookie("userID") != null)
+			{
+						$(".userID").empty();
+						$(".userID").text(cookieVal);
+			}
+			else
+	           	location.href="login.aspx";
+
+	});		
+		$('.userID li:nth-child(2)').click(function(){
+			if (getCookie("userID") != null)
+			{
+						$(".userID").empty();
+						$(".userID").text(cookieVal);
+			}
+			else
+	           	location.href="register.aspx";
+
+	});	
+	window.onload = function(){
+				var cookieVal=getCookie("userID"); 
+				if ( cookieVal!= null)
+					{
+						$(".userID").empty();
+						$(".userID").text(cookieVal);
+						}	
+				else{
+					$('.userID li:nth-child(1)').text("登录");
+					$('.userID li:nth-child(2)').text("注册");
+				}
+				(function browserRedirect() {
+				    var sUserAgent = navigator.userAgent.toLowerCase();
+				    var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+				    var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+				    var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+				    var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+				    var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+				    var bIsAndroid = sUserAgent.match(/android/i) == "android";
+				    var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+				    var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+				    if ((bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM)) {
+				        window.location.replace('http://' + location.host + '/mobile/home.html');
+				    }
+				})();
+		
+		}
+	
+
+
+    function getCookie(name)
+    {
+        var arr, reg = new RegExp("(^|)" + name + "=([^;]*)(;|$)")
+        if (arr = document.cookie.match(reg))
+            return unescape(arr[2]);
+        else
+            return null;
+    }
+	
+	
+});
+</script>
+</head>
+
+
+
+<body class="homepageBackground">
+<div>
+<table class="homepageNav">
+  <tr>
+    <td><li class="brand"></li> </td>
+    <td><div class="userID"><li></li><li></li></div></td>
+  </tr>
+</table>
+
+</div>
+<div class="homepage">
+<ul>
+</ul>
+<ul>
+</ul>
+<ul>
+</ul>
+</div>
+</body>
+</html>

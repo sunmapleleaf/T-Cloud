@@ -1,0 +1,633 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+    <!--Jquery-->
+    <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+
+
+    <!--bootstrap-->
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+    <!-- public -->
+    <link href="css/public.css" rel="stylesheet" media="screen" />
+    <script src="js/public.js"></script>
+    <!-- special -->
+    <script src="js/core.js"></script>
+<style>
+    .contnet-detail {
+    }
+
+    /* machine-data-bar */
+    .machine-data-bar {
+        width: 80%;
+        margin-top: 20px;
+        min-width: 980px;
+        float: left;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+        .machine-data-bar ul {
+            list-style: none;
+            display: inline;
+        }
+
+        .machine-data-bar li {
+            text-align: left;
+            line-height: 36px;
+            width: 85px;
+            height: 37px;
+            float: left;
+            margin: 0px;
+            padding: 0px;
+            cursor: pointer;
+        }
+
+ 
+                .machine-data-bar li:nth-child(1) i {
+                    margin-left: 5px;
+                    margin-top: 11px;
+                }
+
+        .machine-data-bar .active {
+            position: static;
+            height: 37px;
+            color: #555;
+            background-color: #e5e5e5;
+            text-decoration: none;
+            -webkit-box-shadow: inset 0 3px 8px rgba(0,0,0,0.125);
+            -moz-box-shadow: inset 0 3px 8px rgba(0,0,0,0.125);
+            box-shadow: inset 0 3px 8px rgba(0,0,0,0.125);
+        }
+
+        .machine-data-bar .cutoff-vertical {
+            margin: 4px 0px 0px 2px;
+            width: 2px;
+            height: 29px;
+            background-color: #ffffff;
+            -moz-border-radius: 0px;
+            -webkit-border-radius: 0px;
+            border-radius: 0px;
+            float: right;
+        }
+
+        .machine-data-bar .active .cutoff-vertical {
+            display: none;
+        }
+
+
+
+
+
+    .overView {
+        margin-top: 10px;
+        float: left;
+        width: 80%;
+        min-width: 980px;
+    }
+
+        .overView .cutoffLine, .overView .above, .overView .below {
+            background-color: #dff0d8;
+        }
+
+        .overView div {
+            float: left;
+        }
+
+    .above {
+        text-align: left;
+        width: 100%;
+        min-width: 980px;
+        height: 39px;
+        color: white;
+        font-size: 16px;
+        font-family: "黑体";
+        -webkit-border-radius: 0px 0px 0px 0px;
+        -moz-border-radius: 0px;
+        border-radius: 0px;
+    }
+
+    .below {
+        text-align: left;
+        width: 100%;
+        min-width: 980px;
+        height: 130px;
+        color: white;
+        font-size: 16px;
+        font-family: "黑体";
+        -webkit-border-radius: 0px 0px 0px 0px;
+        -moz-border-radius: 0px;
+        border-radius: 0px;
+    }
+
+    .cutoff {
+        width: 100%;
+        min-width: 980px;
+        background-color: #dff0d8;
+    }
+
+    .cutoffLine {
+        margin: 0 1.5% 0 1.5%;
+        width: 97%;
+        height: 1px;
+        background-color: #BFBFBF;
+        overflow: hidden;
+        background-image: url(assets/cutoffLine813.png);
+        background-repeat: repeat;
+    }
+
+    .colorTedericBlue {
+        background-color: #015097;
+    }
+
+    .color-tederic-gray {
+        background-color: #BFBFBF;
+    }
+
+    .circle {
+        float: left;
+        width: 14px;
+        height: 14px;
+        background: red;
+        -moz-border-radius: 7px;
+        -webkit-border-radius: 7px;
+        border-radius: 7px;
+    }
+
+    .above ul {
+        margin: 12px 0px 0px 20px;
+    }
+
+    .above li:first-child {
+        margin: 2px 4px 0px 0px;
+    }
+
+    .info {
+        margin: 12px 0px 0px 50px;
+    }
+
+        .info td {
+            height: 26px;
+        }
+
+        .info div {
+            width: 80px;
+            text-align: right;
+        }
+
+        .info table td:nth-child(2n) div {
+            margin-right: 20px;
+            width: 150px;
+            text-align: left;
+        }
+
+
+
+    .data {
+        width: 80%;
+        min-width: 980px;
+        float: left;
+        color: #999;
+        margin-top:10px;
+        box-sizing: border-box;
+    }
+
+    .data-title {
+        width: 100%;
+        margin-top: 10px;
+        min-width: 980px;
+        float: left;
+        box-sizing: border-box;
+    }
+
+        .data-title li:nth-child(1) {
+            float: left;
+            margin: 10px 0px 0px 20px;
+        }
+
+
+    .table-above {
+        float: left;
+        width: 100%;
+        min-width: 980px;
+        min-height: 175px;
+        margin-top: -1px;
+        padding: 2%;
+        background-color: white;
+        border: 1px solid #d4d4d4;
+        box-sizing: border-box;
+    }
+.table-above td{
+	padding:0px 5px 0px 0px;
+	width:90px;
+	text-align:center;
+	}
+.table-above table tr:nth-child(n+2)/*第2行以后高度为30*/
+{
+	height:30px;
+	}	
+.table-above table tr td:nth-child(1)/*第1列*/
+{
+	text-align:left;
+	width:60px;
+}
+.table-above table tr td:nth-child(3),.table-above table tr td:nth-child(3) input/*第3列*/
+{
+	width:25px;
+}
+.table-above table tr td:nth-child(5),.table-above table tr td:nth-child(5) input/*第5列*/
+{
+	width:25px;
+}
+.table-above table tr td:nth-child(7),.table-above table tr td:nth-child(7) input/*第7列*/
+{
+	width:25px;
+}
+.table-above table tr td:nth-child(9),.table-above table tr td:nth-child(9) input/*第9列*/
+{
+	width:25px;
+}
+
+.table-above input{
+	height:25px;
+	}
+/*table-below*/
+    .table-below {
+        float: left;
+        width: 100%;
+        min-width: 980px;
+        min-height: 175px;
+        margin-top: -1px;
+        padding: 2%;
+        background-color: white;
+        border: 1px solid #d4d4d4;
+        box-sizing: border-box;
+    }
+.table-below td{
+	padding:0px 5px 0px 0px;
+	width:70px;
+	text-align:center;
+	}
+.table-below input{
+	height:25px;
+	width:70px;
+	}
+.table-below table tr:nth-child(n+2)/*第2行以后高度为30*/
+{
+	height:30px;
+	}	
+.table-below table tr td:nth-child(1)/*第1列*/
+{
+	text-align:left;
+	width:60px;
+}
+.table-below table tr td:nth-child(2),.table-below table tr td:nth-child(2) input/*第2列input*/
+{
+	width:25px;
+}
+.table-below table tr td:nth-child(4),.table-below table tr td:nth-child(4) input/*第4列*/
+{
+	width:25px;
+}
+.table-below table tr td:nth-child(13) input/*第13列*/
+{
+	margin-left:4px;
+	width:25px;
+}
+.table-below table tr td:nth-child(13)/*第13列*/
+{
+	text-align:left;
+}
+.table-below  table tr td:nth-child(8) > input/*第8列*/
+{
+  text-align:right;
+}
+
+
+	
+</style>
+</head>
+<body>
+
+    <div id="myexample">
+        <nav class="navbar navbar-default" role="navigation">
+            <ul class="nav navbar-nav">
+                <li><div id="logo"></div><a class="tCloud"></a></li>
+                <li><a href="../home.html"><div class="icon-nav0"></div><span>首 页</span></a></li>
+                <li><a href="index.html"><div class="icon-nav1"></div><span>生产监控</span></a></li>
+                <li class="active"><a href="production.html"><div class="icon-nav2"></div><span>生产管理</span></a></li>
+                <li><a href="equipment.html"><div class="icon-nav3"></div><span>设备管理</span></a></li>
+                <li><a href="afterSale.html"><div class="icon-nav4"></div><span>设备维护</span></a></li>
+                <li><a href="mould.html"><div class="icon-nav5"></div><span>工艺管理</span></a></li>
+                <li><a href="statistics.html"><div class="icon-nav6"></div><span>数据统计</span></a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a id="action-1" href="#">信息</a></li>
+                        <li><a>退出</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+<div class="content">
+<div class="side-bar">
+  <div class="side-bar-inner">
+    <li class="active"> <a href="index.html"><i class="icon-chevron-right"></i>塑 机</a> </li>
+    <li> <a href="analysisAlarm.html"><i class="icon-chevron-right"></i>统计分析</a> </li>
+    <li> <a href="mould.html"><i class="icon-chevron-right"></i>成型工艺</a> </li>
+    <li> <a href="auxiliary.html"><i class="icon-chevron-right"></i>辅助设备</a> </li>
+
+    <!--<li> <a href="gps.html"><i class="icon-chevron-right"></i>GPS</a> </li>-->
+    
+    </ul>
+  </div>
+</div>
+<div class="content-detail">
+<div class="machine-data-bar bar-background">
+  <ul>
+    <li><div><i class="icon-chevron-left hide-sidebar"></i> <i class="icon-chevron-right show-sidebar" style="display:none;"></i></div> </li>
+    <li>
+      <div class="tederic-image-mold"></div>
+      模 具<!--<i class="cutoff-vertical"></i>--></li>
+    <li>
+      <div class="tederic-image-ejector"></div>
+      顶 针<!--<i class="cutoff-vertical">--></i></li>
+    <li class="active">
+      <div class="tederic-image-core"></div>
+      中 子<!--<i class="cutoff-vertical">--></i></li>
+    <li>
+      <div class="tederic-image-injection"></div>
+      注 射<!--<i class="cutoff-vertical">--></i></li>
+    <li>
+      <div class="tederic-image-carriage"></div>
+      座 台<!--<i class="cutoff-vertical"></i>--></li>  
+    <li>
+      <div class="tederic-image-temperature"></div>
+      温 度<!--<i class="cutoff-vertical"></i>--></li>     
+
+  </ul>
+</div>
+
+<div class="overView">
+   <div class="above">
+   <ul>
+   <li class="circle"></li><li id="machineID"></li>
+</ul>
+      </div>
+      <div class="cutoff"><li class="cutoffLine"></li></div>
+      <div class="below color-tederic-gray">
+      <div class="info">
+    <table >
+  <tr>
+    <td><div >订单号：</div></td>
+    <td><div id="orderNumber"></div></td>
+    <td><div >控制器：</div></td>
+    <td><div id="controllerType"></div></td>
+  </tr>
+  <tr>
+    <td><div >产品名称：</div></td>
+    <td><div id="moldDataName"></div></td>
+    <td><div>状态：</div></td>
+    <td><div id="connStatus"></div></td>
+  </tr>
+  <tr>
+    <td><div >产品数量：</div></td>
+    <td><div id="productCounterAct"></div></td>
+    <td><div >时间：</div></td>
+    <td><div id="timestamp"></div></td>
+  </tr>
+  <tr>
+    <td><div>循环周期：</div></td>
+    <td><div id="lastCycleTime"></div></td>
+  </tr>
+</table>
+</div>
+<div class="pie" id="keba001"><canvas class="process" width="80px" height="80px" >20%</canvas></div></div>
+<!--/*<div class="pie" id="keba002">
+30%
+</div>*/-->
+</div>
+    
+</table>
+</div>
+
+<div class="data">
+<ul class="data-title bar-background">
+<li >中 子</li>
+</ul>
+
+<ul class="table-above">
+<table>
+  <tr>
+    <td>&nbsp;</td>
+    <td>使用</td>
+    <td></td>
+    <td>进芯模式</td>
+    <td></td>
+    <td>出芯模式</td>
+    <td></td>
+    <td>中子保持</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td class="coreUse"><input readonly="readonly"/></td>
+    <td class="coreUse"><input readonly="readonly"/></td>
+    <td class="coreOutMode"><input readonly="readonly"/></td>
+    <td class="coreOutMode"><input readonly="readonly"/></td>
+    <td class="coreInMode"><input readonly="readonly"/></td>
+    <td class="coreInMode"><input readonly="readonly"/></td>
+    <td class="coreHold"><input readonly="readonly"/></td>
+    <td class="coreHold"><input readonly="readonly"/></td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td class="coreUse"><input readonly="readonly"/></td>
+    <td class="coreUse"><input readonly="readonly"/></td>
+    <td class="coreOutMode"><input readonly="readonly"/></td>
+    <td class="coreOutMode"><input readonly="readonly"/></td>
+    <td class="coreInMode"><input readonly="readonly"/></td>
+    <td class="coreInMode"><input readonly="readonly"/></td>
+    <td class="coreHold"><input readonly="readonly"/></td>
+    <td class="coreHold"><input readonly="readonly"/></td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td class="coreUse"><input readonly="readonly"/></td>
+    <td class="coreUse"><input readonly="readonly"/></td>
+    <td class="coreOutMode"><input readonly="readonly"/></td>
+    <td class="coreOutMode"><input readonly="readonly"/></td>
+    <td class="coreInMode"><input readonly="readonly"/></td>
+    <td class="coreInMode"><input readonly="readonly"/></td>
+    <td class="coreHold"><input readonly="readonly"/></td>
+    <td class="coreHold"><input readonly="readonly"/></td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td class="coreUse"><input readonly="readonly"/></td>
+    <td class="coreUse"><input readonly="readonly"/></td>
+    <td class="coreOutMode"><input readonly="readonly"/></td>
+    <td class="coreOutMode"><input readonly="readonly"/></td>
+    <td class="coreInMode"><input readonly="readonly"/></td>
+    <td class="coreInMode"><input readonly="readonly"/></td>
+    <td class="coreHold"><input readonly="readonly"/></td>
+    <td class="coreHold"><input readonly="readonly"/></td>
+  </tr>
+</table>
+
+</ul>
+<ul class="data-title bar-background">
+<li>设 置</li>
+</ul>
+<ul class="table-below">
+<table>
+  <tr>
+    <td></td>
+    <td>&nbsp;</td>    
+    <td>模式</td>
+    <td></td>
+    <td>压力</td>
+    <td>速度</td>
+    <td>实际位置</td>
+    <td>监控位置</td>
+    <td>时间</td>
+    <td></td>
+    <td>绞牙</td>
+    <td></td>
+    <td>优先</td>
+  </tr>
+  <tr>
+    <td>1 进</td>
+    <td class="airVavleStartPosition"><input readonly="readonly"/></td>
+    <td class="airVavleSetDelayTime"><input readonly="readonly"/></td>
+    <td class="airVavleSetMoveTime"><input readonly="readonly"/></td>
+    <td class="coreInPressure"><input readonly="readonly"/></td>
+    <td class="coreInVelocity"><input readonly="readonly"/></td>
+    <td class="coreInActPosition"><input readonly="readonly"/></td>
+    <td class="coreInMonitorPosition"><input readonly="readonly"/></td>
+    <td class="coreInActMoveTime"><input readonly="readonly"/></td>
+    <td class="coreInSetMoveTime"><input readonly="readonly"/></td>
+    <td class="coreInActScrewCount"><input readonly="readonly"/></td>
+    <td class="coreInSetScrewCount"><input readonly="readonly"/></td>
+    <td class="coreInPriority"><input readonly="readonly"/></td>
+  </tr>
+  <tr>
+    <td>&nbsp;退</td>
+    <td class="airVavleStartPosition"><input readonly="readonly"/></td>
+    <td class="airVavleSetDelayTime"><input readonly="readonly"/></td>
+    <td class="airVavleSetMoveTime"><input readonly="readonly"/></td>
+    <td class="coreOutPressure"><input readonly="readonly"/></td>
+    <td class="coreOutVelocity"><input readonly="readonly"/></td>
+    <td class="coreOutActPosition"><input readonly="readonly"/></td>
+    <td class="coreOutMonitorPosition"><input readonly="readonly"/></td>
+    <td class="coreOutActMoveTime"><input readonly="readonly"/></td>
+    <td class="coreOutSetMoveTime"><input readonly="readonly"/></td>
+    <td class="coreOutActScrewCount"><input readonly="readonly"/></td>
+    <td class="coreOutSetScrewCount"><input readonly="readonly"/></td>
+    <td class="coreOutPriority"><input readonly="readonly"/></td>
+  </tr>
+  <tr>
+    <td>2  进</td>
+    <td class="airVavleStartPosition"><input readonly="readonly"/></td>
+    <td class="airVavleSetDelayTime"><input readonly="readonly"/></td>
+    <td class="airVavleSetMoveTime"><input readonly="readonly"/></td>
+    <td class="coreInPressure"><input readonly="readonly"/></td>
+    <td class="coreInVelocity"><input readonly="readonly"/></td>
+    <td class="coreInActPosition"><input readonly="readonly"/></td>
+    <td class="coreInMonitorPosition"><input readonly="readonly"/></td>
+    <td class="coreInActMoveTime"><input readonly="readonly"/></td>
+    <td class="coreInSetMoveTime"><input readonly="readonly"/></td>
+    <td class="coreInActScrewCount"><input readonly="readonly"/></td>
+    <td class="coreInSetScrewCount"><input readonly="readonly"/></td>
+    <td class="coreInPriority"><input readonly="readonly"/></td>
+  </tr>
+  <tr>
+    <td> &nbsp;退</td>
+    <td class="airVavleStartPosition"><input readonly="readonly"/></td>
+    <td class="airVavleSetDelayTime"><input readonly="readonly"/></td>
+    <td class="airVavleSetMoveTime"><input readonly="readonly"/></td>
+    <td class="coreOutPressure"><input readonly="readonly"/></td>
+    <td class="coreOutVelocity"><input readonly="readonly"/></td>
+    <td class="coreOutActPosition"><input readonly="readonly"/></td>
+    <td class="coreOutMonitorPosition"><input readonly="readonly"/></td>
+    <td class="coreOutActMoveTime"><input readonly="readonly"/></td>
+    <td class="coreOutSetMoveTime"><input readonly="readonly"/></td>
+    <td class="coreOutActScrewCount"><input readonly="readonly"/></td>
+    <td class="coreOutSetScrewCount"><input readonly="readonly"/></td>
+    <td class="coreOutPriority"><input readonly="readonly"/></td>
+  </tr>
+   <tr>
+    <td>3 进</td>
+    <td class="airVavleStartPosition"><input readonly="readonly"/></td>
+    <td class="airVavleSetDelayTime"><input readonly="readonly"/></td>
+    <td class="airVavleSetMoveTime"><input readonly="readonly"/></td>
+    <td class="coreInPressure"><input readonly="readonly"/></td>
+    <td class="coreInVelocity"><input readonly="readonly"/></td>
+    <td class="coreInActPosition"><input readonly="readonly"/></td>
+    <td class="coreInMonitorPosition"><input readonly="readonly"/></td>
+    <td class="coreInActMoveTime"><input readonly="readonly"/></td>
+    <td class="coreInSetMoveTime"><input readonly="readonly"/></td>
+    <td class="coreInActScrewCount"><input readonly="readonly"/></td>
+    <td class="coreInSetScrewCount"><input readonly="readonly"/></td>
+    <td class="coreInPriority"><input readonly="readonly"/></td>
+  </tr>
+    <tr>
+    <td>&nbsp;退</td>
+    <td class="airVavleStartPosition"><input readonly="readonly"/></td>
+    <td class="airVavleSetDelayTime"><input readonly="readonly"/></td>
+    <td class="airVavleSetMoveTime"><input readonly="readonly"/></td>
+    <td class="coreOutPressure"><input readonly="readonly"/></td>
+    <td class="coreOutVelocity"><input readonly="readonly"/></td>
+    <td class="coreOutActPosition"><input readonly="readonly"/></td>
+    <td class="coreOutMonitorPosition"><input readonly="readonly"/></td>
+    <td class="coreOutActMoveTime"><input readonly="readonly"/></td>
+    <td class="coreOutSetMoveTime"><input readonly="readonly"/></td>
+    <td class="coreOutActScrewCount"><input readonly="readonly"/></td>
+    <td class="coreOutSetScrewCount"><input readonly="readonly"/></td>
+    <td class="coreOutPriority"><input readonly="readonly"/></td>
+  </tr>
+  <tr>
+    <td>4   进</td>
+    <td class="airVavleStartPosition"><input readonly="readonly"/></td>
+    <td class="airVavleSetDelayTime"><input readonly="readonly"/></td>
+    <td class="airVavleSetMoveTime"><input readonly="readonly"/></td>
+    <td class="coreInPressure"><input readonly="readonly"/></td>
+    <td class="coreInVelocity"><input readonly="readonly"/></td>
+    <td class="coreInActPosition"><input readonly="readonly"/></td>
+    <td class="coreInMonitorPosition"><input readonly="readonly"/></td>
+    <td class="coreInActMoveTime"><input readonly="readonly"/></td>
+    <td class="coreInSetMoveTime"><input readonly="readonly"/></td>
+    <td class="coreInActScrewCount"><input readonly="readonly"/></td>
+    <td class="coreInSetScrewCount"><input readonly="readonly"/></td>
+    <td class="coreInPriority"><input readonly="readonly"/></td>
+  </tr>
+<tr>
+    <td>&nbsp;退</td>
+    <td class="airVavleStartPosition"><input readonly="readonly"/></td>
+    <td class="airVavleSetDelayTime"><input readonly="readonly"/></td>
+    <td class="airVavleSetMoveTime"><input readonly="readonly"/></td>
+    <td class="coreOutPressure"><input readonly="readonly"/></td>
+    <td class="coreOutVelocity"><input readonly="readonly"/></td>
+    <td class="coreOutActPosition"><input readonly="readonly"/></td>
+    <td class="coreOutMonitorPosition"><input readonly="readonly"/></td>
+    <td class="coreOutActMoveTime"><input readonly="readonly"/></td>
+    <td class="coreOutSetMoveTime"><input readonly="readonly"/></td>
+    <td class="coreOutActScrewCount"><input readonly="readonly"/></td>
+    <td class="coreOutSetScrewCount"><input readonly="readonly"/></td>
+    <td class="coreOutPriority"><input readonly="readonly"/></td>
+  </tr>
+</table>
+</ul>
+</div>
+</div>
+</div>
+</body>
+</html>

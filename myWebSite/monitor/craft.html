@@ -1,0 +1,690 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>index</title>
+    <!--Jquery-->
+    <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+
+
+    <!--bootstrap-->
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+    <!-- public -->
+    <link href="css/public.css" rel="stylesheet" media="screen" />
+    <script src="js/public.js"></script>
+   <script src="js/craft.js"></script>  
+
+<style>
+    *, *:before, *:after {
+     -webkit-box-sizing:content-box; 
+    -moz-box-sizing: content-box;
+     box-sizing: content-box; 
+}
+    .title {
+        width: 80%;
+        min-width:980px;
+        float: left;
+        color: #999;
+        box-sizing:border-box;
+		
+    }
+
+	
+    .title-text {
+        width:100%;
+        margin-top: 20px;
+        min-width: 980px;
+        float: left;
+        -webkit-border-radius: 4px 4px 0px 0px;
+        -moz-border-radius: 4px 4px 0px 0px;
+        border-radius: 4px 4px 0px 0px;
+        box-sizing:border-box;
+    }
+
+        .title-text li:nth-child(1) {
+            float: left;
+            margin: 1% 67% 0 2%;
+        }
+
+.title-text .search {
+	width: 90px;
+	
+	height: 20px;
+	margin: 8px 0px 0px 40px;
+	background-position: 3px 3px;
+	background-size: 15px 15px;
+	background-image: url(searchPS.png);
+	background-repeat: no-repeat;
+	float: left;
+}
+.title-text .search input {
+	text-indent: 1.5em;
+}
+.title-text .showSelect li:hover{
+	background-color:#fafafa;
+	}
+.title-text .showSelect li{
+	cursor:pointer;
+	float:left;
+	width:30px;
+	height:20px;
+	padding-left:15px;
+	background-color:#fff;
+    margin: 8px 0px 0px 0px;
+				border-top: 1px solid #d9d9d9;
+			border-bottom: 1px solid #d9d9d9;
+
+	}
+.title-text .showSelect li:first-child{
+	width:27px;
+	padding-left:18px;
+		border: 1px solid #d9d9d9;
+
+	-webkit-border-radius: 4px 0px 0px 4px;
+	-moz-border-radius: 4px 0px 0px 4px;
+	border-radius: 4px 0px 0px 4px;
+	}
+.title-text .showSelect li:last-child{
+			border: 1px solid #d9d9d9;
+		-webkit-border-radius: 0px 4px 4px 0px;
+	-moz-border-radius: 0px 4px 4px 0px;
+	border-radius: 0px 4px 4px 0px;
+	border-right:1px solid #d9d9d9;
+	}
+.title-text .showSelect  .active{
+
+	background-color:#5bb75b;
+	background-image:linear-gradient(to bottom, #62c462, #51a351);
+	background-image:repeat-x;
+	border-color:rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	color:#fff;
+	}
+    .context {
+        float: left;
+        width:100%;
+        min-width: 980px;
+        min-height: 270px;
+        height:auto;
+        margin-top: -1px;
+        padding: 2% 3% 3% 3%;
+        background-color: white;
+        border: 1px solid #d4d4d4;
+        box-sizing:border-box;
+    }
+.context table tr:nth-child(n+2):hover{
+	cursor:pointer;
+	background-color:#e4e4e4;
+	}
+.context table td div{
+	border: 1px solid #d9d9d9;
+	border-top:none;
+	border-right:none;
+	-webkit-box-shadow:0 1px 2px rgba(0,0,0,0.05);
+	-moz-box-shadow:0 1px 2px rgba(0,0,0,0.05);
+	box-shadow:0 1px 2px rgba(0,0,0,0.05);
+	
+	width:195px;
+	height:18px;
+	text-align:left;
+	padding:8px;
+	}
+	.context table tr:first-child td:first-child div
+	{
+			-webkit-border-radius: 4px 0px 0px 0px;
+	-moz-border-radius: 4px 0px 0px 0px;
+	border-radius: 4px 0px 0px 0px;	
+		}
+	
+		.context table tr:first-child td:last-child div
+	{
+			-webkit-border-radius: 0px 4px 0px 0px;
+	-moz-border-radius:  0px 4px 0px 0px;
+	border-radius:  0px 4px 0px 0px;	
+		}
+		.context table tr:last-child td:first-child div
+	{
+			-webkit-border-radius: 0px 0px 0px 4px;
+	-moz-border-radius: 0px 0px 0px 4px;
+	border-radius: 0px 0px 0px 4px;	
+		}
+	.context table tr:last-child td:last-child div
+	{
+			-webkit-border-radius: 0px 0px 4px 0px;
+	-moz-border-radius: 0px 0px 4px 0px;
+	border-radius: 0px 0px 4px 0px;	
+		}
+.context table  tr:first-child div/*第1column*/
+{
+	border-top: 1px solid #d9d9d9;
+
+}
+.context table  td:last-child div/*第1列*/
+{
+	border-right: 1px solid #d9d9d9;
+
+
+}
+.context table td:nth-child(1) div
+{
+	width:40px;
+	padding-left:15px;
+}
+.context table tr:nth-child(2n) 
+{
+	background:#fafafa;
+	
+	}
+
+        .context ul {
+            float: right;
+            margin-top: 10px;
+            margin-right: 3.7%;
+            line-height: 25px;
+            height: 25px;
+        }	
+	
+.context ul li{
+	float:left;
+	
+	}
+
+.context ul li:first-child span{
+	    float:left;
+	    width:80px;
+	    padding-left:10px;
+	    margin:0px;
+	    border-right:none;
+	    -webkit-border-radius: 4px 0px 0px 4px;
+	    -moz-border-radius: 4px 0px 0px 4px;
+	    border-radius: 4px 0px 0px 4px;	
+	}
+.context ul li:last-child span{
+	    float:left;
+	    width:80px;
+	    margin:0px;
+	    padding-left:10px;
+        border: 1px solid #d9d9d9;
+	    -webkit-border-radius: 0px 4px 4px 0px;
+	    -moz-border-radius: 0px 4px 4px 0px;
+	    border-radius: 0px 4px 4px 0px;	
+	}
+
+	.context ul li span{
+	    float:left;
+	    width:25px;
+	    margin:0px;
+	    padding-left:15px;
+        border: 1px solid #d9d9d9;
+        border-right:none;
+	    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+	    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+	    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+	
+	}
+	.context ul:hover{
+		cursor:pointer;
+		}
+	.context .active,.context span:hover{
+		background-color:#fafafa;
+		}
+#upload{
+	text-indent: 0;
+	margin-top:10px;
+	height:25px;
+	font-family: "黑体","Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding:0;
+	}		
+
+/* 上传 下载CSS1 */
+.hideDlg
+    {
+        height:220px;width:368px;
+        display:none;
+    }
+    .showDlg
+    {
+        background-color:#ffffff;
+        border-width:0px;
+        border-style:solid;
+        height:220px;width:368px;
+        position: absolute; 
+        display:block;
+        z-index:1115;
+			-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+    }
+    .showDeck {
+        display:block;
+        top:0px;
+        left:0px;
+        margin:0px;
+        padding:0px;
+        width:100%;
+        min-width:1220px;
+		min-height:2500px;
+        height:100%;
+        position:absolute;
+        z-index:1113;
+        background:#666;
+    }
+    .hideDeck 
+    {
+        display:none;
+    }
+#divBox{
+		font-size:14px;
+		line-height:14px;
+		padding:0px;
+		margin:0px;
+		font-family:"黑体", "Adobe Arabic";
+		}
+
+#divBox input[type=button]{
+	width:100px;
+	height:25px;
+	margin-top:0px;
+	margin-left:5px;
+	padding:0px;
+	text-indent: 0em;
+	font-family:"黑体", "Adobe Arabic";
+	}
+#divBox input[type=text]{
+	width:190px;
+	height:25px;
+	margin-top:5px;
+	margin-left:5px;
+		padding-left:30px;
+	font-size:14px;
+	font-family:"黑体", "Adobe Arabic";
+	padding-left:15px;
+	text-indent: 0em;
+}
+
+
+
+
+#divBox table tr td:nth-child(1)/*第1列*/
+{
+	text-align:right;
+	width:80px;
+}
+/* 上传 下载CSS2 */
+.hideDlg2
+    {
+        height:300px;width:668px;
+        display:none;
+    }
+    .showDlg2
+    {
+
+        background-color:#ffffff;
+        border-width:0px;
+        border-style:solid;
+        height:300px;width:668px;
+        position: absolute; 
+        display:block;
+        z-index:1115;
+			-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+    }
+    .showDeck2 {
+        display:block;
+        top:0px;
+        left:0px;
+        margin:0px;
+        padding:0px;
+        width:100%;
+        min-width:1220px;
+		min-height:2500px;
+        height:100%;
+        position:absolute;
+        z-index:1113;
+        background:#666;
+    }
+    .hideDeck2 
+    {
+        display:none;
+    }
+#divBox2{
+		font-size:14px;
+		line-height:14px;
+		padding:0px;
+        float:left;
+		font-family:"黑体", "Adobe Arabic";
+		margin-top:-50%;
+						margin-left:30%;
+
+		}
+
+#divBox2 input[type=button]{
+	width:100px;
+	height:25px;
+	margin-top:0px;
+	margin-left:5px;
+	padding:0px;
+	text-indent: 0em;
+	font-family:"黑体", "Adobe Arabic";
+	}
+#divBox2 input[type=text]{
+	width:190px;
+	height:25px;
+	margin-top:5px;
+	margin-left:5px;
+		padding-left:30px;
+	font-size:14px;
+	font-family:"黑体", "Adobe Arabic";
+	padding-left:15px;
+	text-indent: 0em;
+}
+
+
+
+
+#divBox2 table tr td:nth-child(1)/*第1列*/
+{
+	text-align:right;
+	width:80px;
+}
+
+    #divBox2 table tr td:nth-child(3) /*第3列*/ {
+        text-align: right;
+        width:60px;
+    }
+    .select_wrapper {
+        background: #ffffff url("arrow.png") no-repeat top 15px right 12px;
+        line-height: 25px;
+        border-radius: 4px;
+        cursor: pointer;
+        position: relative;
+        border: 1px solid #d9d9d9;
+        width: 205px;
+        margin-left: 5px;
+    }
+
+        .select_wrapper:hover {
+            background: #fafafa url("arrow.png") no-repeat top 15px right 12px;
+            border: 1px solid #d9d9d9;
+            border-color: rgba(82, 168, 236, 0.8);
+            outline: 0;
+            outline: thin dotted \9;
+            /* IE6-9 */
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+            -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+        }
+
+        .select_wrapper span {
+            color: #bfbfbf;
+            display: block;
+            margin: 0 30px 0 15px;
+        }
+
+        .select_wrapper .select_inner {
+            background: #fff;
+            border-radius: 4px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            color: #687278;
+            display: none;
+            position: absolute;
+            left: 0;
+            top: -100%;
+            width: 205px;
+            z-index: 3;
+        }
+
+            .select_wrapper .select_inner li {
+                border-bottom: 1px solid #eee;
+                padding: 0 15px;
+            }
+
+                .select_wrapper .select_inner li:hover {
+                    background: #eee;
+                }
+
+                .select_wrapper .select_inner li:last-child {
+                    border: none;
+                    border-radius: 0 0 4px 4px;
+                }
+
+                .select_wrapper .select_inner li:first-child {
+                    border-radius: 4px 4px 0 0;
+                }
+
+</style>
+
+
+</head>
+<body>
+
+    <div id="myexample">
+        <nav class="navbar navbar-default" role="navigation">
+            <ul class="nav navbar-nav">
+                <li><div id="logo"></div><a class="tCloud"></a></li>
+                <li><a href="../home.html"><div class="icon-nav0"></div><span>首 页</span></a></li>
+                <li><a href="index.html"><div class="icon-nav1"></div><span>生产监控</span></a></li>
+                <li class="active"><a href="production.html"><div class="icon-nav2"></div><span>生产管理</span></a></li>
+                <li><a href="equipment.html"><div class="icon-nav3"></div><span>设备管理</span></a></li>
+                <li><a href="afterSale.html"><div class="icon-nav4"></div><span>设备维护</span></a></li>
+                <li><a href="mould.html"><div class="icon-nav5"></div><span>工艺管理</span></a></li>
+                <li><a href="statistics.html"><div class="icon-nav6"></div><span>数据统计</span></a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a id="action-1" href="#">信息</a></li>
+                        <li><a>退出</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="content">
+        <div class="side-bar">
+            <div class="side-bar-inner">
+                <li> <a href="index.html"><i class="icon-chevron-right"></i>塑 机</a> </li>
+                <li> <a href="analysisAlarm.html"><i class="icon-chevron-right"></i>统计分析</a> </li>
+                <li class="active"> <a href="mould.html"><i class="icon-chevron-right"></i>成型工艺</a> </li>
+                <li> <a href="auxiliary.html"><i class="icon-chevron-right"></i>辅助设备</a> </li>
+            
+                <!--<li> <a href="gps.html"><i class="icon-chevron-right"></i>GPS</a> </li>-->
+                
+                </ul>
+            </div>
+        </div>
+        <div class="title">
+            <ul class="title-text bar-background">
+                <li>模具</li>
+                <ul class="showSelect">
+                <li class="active">5</li>
+                <li>10</li>
+                <li>20</li>
+                </ul>
+                <li><div class="search"><input type="text" name="searchIpt" value=""/></div></li>
+            </ul>
+            <ul class="context">
+<table>
+ <tr>
+    <td><div>编号</div></td>
+    <td><div>工艺名称</div></td>
+    <td><div>适用机型</div></td>
+    <td><div>控制器</div></td>
+    <td><div>日期</div></td>
+  </tr>
+  <tr>
+    <td><div>1</div></td>
+    <td><div>&nbsp;</div></td>
+    <td><div>&nbsp;</div></td>
+    <td><div>&nbsp;</div></td>
+    <td><div>&nbsp;</div></td>
+  </tr>
+  <tr>
+    <td><div>2</div></td>
+    <td><div>&nbsp;</div></td>
+    <td><div>&nbsp;</div></td>
+    <td><div>&nbsp;</div></td>
+    <td><div>&nbsp;</div></td>
+  </tr>
+  <tr>
+    <td><div>3</div></td>
+    <td><div>&nbsp;</div></td>
+    <td><div>&nbsp;</div></td>
+    <td><div>&nbsp;</div></td>
+    <td><div>&nbsp;</div></td>
+  </tr>
+  <tr>
+    <td><div>4</div></td>
+    <td><div>&nbsp;</div></td>
+    <td><div>&nbsp;</div></td>
+    <td><div>&nbsp;</div></td>
+    <td><div>&nbsp;</div></td>
+  </tr>
+   <tr>
+    <td><div>5</div></td>
+    <td><div>&nbsp;</div></td>
+    <td><div>&nbsp;</div></td>
+    <td><div>&nbsp;</div></td>
+    <td><div>&nbsp;</div></td>
+  </tr> 
+</table>
+<div>
+<input type="button" id="upload" value="上 传" class="btn btn-success"/>
+</div>
+<ul>
+
+</ul>
+
+
+            </ul>
+         </div>
+        </div>
+
+
+    </div>
+  <div id="divBox" class="hideDlg" style="" >
+            <table style="height:100%; width: 100%;" id="table1">
+                    <tr>
+                        <td style="height: 50px; text-align: center; font-size:30px;" colspan="2">下 载</td>
+                    </tr>
+                    <tr>
+                        <td>模具</td>
+                        <td><input type="text" id="moldID" value="keba001" readonly="readonly"></td>                                                   
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>下载到</td>
+                        <td><input type="text" id="" value="keba001"></td>                                                   
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>                   
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="button" name="Button1" value="确 定" class="btn btn-success" id="Button1"  onclick="sendFliter();"/>&nbsp;&nbsp;
+                            <input type="button" name="Button2" value="取 消" class="btn btn-success" id="Button2"  onclick="cancel();" />
+                            </td>
+                        <td>
+                        </td>
+                        <td>&nbsp;</td>
+                        <td></td>
+
+                    </tr>
+                    
+                                      <tr>
+                        <td></td>
+                        <td>
+                            <input type="button" name="Button3" value="测试数据" class="btn btn-success" id="Button3"  onclick='testData();'/>
+                            </td>
+                        <td>
+                        </td>
+                        <td>&nbsp;</td>
+                        <td></td>
+
+                    </tr>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td>
+                    </td>
+                    <td></td>
+                    <td>&nbsp;</td>
+                    <td></td>
+
+                </tr>
+            </table>
+    </div>    
+ <div id="divBox2" class="hideDlg2" style="" >
+            <table style="height:100%; width: 100%;" id="table2">
+                    <tr>
+                        <td style="height: 50px; text-align: center; font-size:30px;" colspan="4">上 传</td>
+                    </tr>
+                    <tr>
+                        <td>从机器</td>
+                        <td><input type="text" id="" value="keba001" readonly=""></td>                                                   
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                  <tr>
+                        <td></td>
+                        <td><input type="button" name="Button1" value="载 入" class="btn btn-success" id=""  onclick="upLoad();"/></td>                                                   
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>                      
+                    <tr>
+                        <td>上传模具</td>
+                        <td id="craftName"><select class="selectbox" id="parameterFilter" name="">
+    <option>选择工艺</option>
+</select>
+                        </td>                                                   
+                        <td>工艺名称</td>
+                        <td><input type="text" id="" value=""></td>
+                        <td></td>
+                    </tr>                   
+                    <tr>
+                        <td>材料</td>
+                        <td><input type="text" id="" value=""></td>                                                   
+                        <td>控制器</td>
+                        <td><input type="text" id="" value="" /></td>
+                        <td></td>
+                    </tr> 
+                <tr>
+                    <td>机械手</td>
+                    <td><input type="text" id="" value="" /></td>
+                    <td>辅机信息</td>
+                    <td><input type="text" id="" value="" /></td>
+                    <td></td>
+                </tr> 
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="button" name="Button1" value="上 传" class="btn btn-success" id=""  onclick="sendFliter2();"/>&nbsp;&nbsp;
+                            <input type="button" name="Button2" value="取 消" class="btn btn-success" id=""  onclick="cancel2();" />
+                            </td>
+                        <td>&nbsp;</td>
+                        <td></td>
+
+                    </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                    </td>
+                    <td>&nbsp;</td>
+                    <td></td>
+
+                </tr>
+            </table>
+    </div>       
+    </body>
+    
+  
+</html>

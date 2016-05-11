@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>HOME</title>
+<link href="css/public.css" rel="stylesheet" media="screen"/>
+<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+
+<style>
+
+
+.homepageBackground{
+	background-color:#404040;
+	margin:0px;
+	padding:0px;
+
+}
+ul,li{
+	list-style-type:none;
+	}
+table {
+    width:95%;
+        margin:0% auto;
+    }
+table td{
+
+    padding-top:5%;
+}
+    table td:first-child {
+        padding-top: 0%;
+        padding-bottom: 5%;
+    }
+img{
+width:100%;
+}
+
+#brand
+{
+	margin:4% 0px 0px 1%;
+	width:20%;
+	}
+
+.userID{
+	margin:10px 0px 0px 10px;
+	float:right;
+        
+	font-size:16px;
+	padding-right:10px;
+	color:#8c8c8c;
+	}
+.userID td:last-child{
+	width:100px;
+
+
+	}
+.userID li{
+		height:32px;
+			line-height:32px;
+	width:50px;
+	float:left;
+	cursor:pointer;
+	}
+.homepage ul{
+	width:236px;
+	height:177px;
+	padding:0px;
+	margin:0px;
+	float:left;
+		-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+	}
+.homepage ul:nth-child(1)
+{
+
+	margin:88px 0px 0px 8px;
+
+	}
+.homepage ul:nth-child(2)
+{
+
+	margin:5px 0px 0px 140px;
+
+	}
+.homepage ul:nth-child(3)
+{
+
+	margin:55px 0px 0px 100px;
+	}
+  table tr:nth-child(n+2)  img:hover {
+        -webkit-border-radius: 15.6%;
+        -moz-border-radius: 15.6%;
+        border-radius: 15.6%;
+        cursor: pointer;
+        background-color: rgba(0,0,0,0.5);
+    }
+</style>
+<script>
+
+$(document).ready(function() {
+    $('table tr:nth-child(2)').click(function () {
+			if (getCookie("userID") != null)
+            	location.href="../mobile/index.html";
+			else
+			    location.href = "../login.html?url=/mobile/index.html";
+
+	});
+    $('table tr:nth-child(4)').click(function () {
+			if (getCookie("userID") != null)
+            	location.href="../mobile/accountManage.html";
+			else
+			    location.href = "../login.html?url=mobile/accountManage.html";
+
+    });
+    $('table tr:nth-child(3)').click(function () {
+        if (getCookie("userID") != null)
+            location.href = "../mobile/production.html";
+        else
+            location.href = "../login.html?url=mobile/production.html";
+
+    });
+	
+    function getCookie(name)
+    {
+        var arr, reg = new RegExp("(^|)" + name + "=([^;]*)(;|$)")
+        if (arr = document.cookie.match(reg))
+            return unescape(arr[2]);
+        else
+            return null;
+    }
+	
+	
+});
+</script>
+</head>
+
+
+
+<body class="homepageBackground">
+<div>
+<table>
+    <tr>
+        <td><img id="brand" src="../monitor/assets/brand.png" /></td>
+    </tr>
+  <tr>
+    <td><img src="塑机.png" /> </td>
+  </tr>
+    <tr>
+        <td><img src="生产.png" /></td>
+    </tr>
+    <tr>
+        <td><img src="人员.png" /></td>
+    </tr>
+</table>
+
+</div>
+
+</body>
+</html>

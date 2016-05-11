@@ -1,0 +1,174 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>index</title>
+
+    <!--Jquery-->
+    <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+
+
+    <!--bootstrap-->
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+    <!-- public -->
+    <link href="css/public.css" rel="stylesheet" media="screen" />
+    <script src="js/public.js"></script>
+
+
+    <link href="index.css" rel="stylesheet" media="screen"/>
+    <script src="js/echarts.min.js"></script>
+    <script src="js/dataTool.js"></script>
+
+    <style>
+        .outline {
+            margin-top: 20px;
+            width: 80%;
+            min-width: 978px;
+            float: left;
+            height: 90%;
+            min-height:330px;
+            box-sizing:border-box;
+        }
+        .outlineLeft {
+            width: 8%;
+            min-width: 76px;
+            /*padding-left: 20px;*/
+            /*line-height: 90%;*/
+            height: 90%;
+            padding-top:25%;
+            min-height: 330px;
+            float: left;
+            font-size: 16px;
+            font-family: "黑体","宋体","Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-color: #fafafa;
+            background-image: -moz-linear-gradient(top, #fff, #f2f2f2);
+            background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fff), to(#f2f2f2));
+            background-image: -webkit-linear-gradient(top, #fff, #f2f2f2);
+            background-image: -o-linear-gradient(top, #fff, #f2f2f2);
+            background-image: linear-gradient(to bottom, #fff, #f2f2f2);
+            background-repeat: repeat-x;
+            border: 1px solid #d4d4d4;
+            border-right: none;
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff2f2f2', GradientType=0);
+            *zoom: 1;
+            -webkit-box-shadow: 0 1px 4px rgba(0,0,0,0.065);
+            -moz-box-shadow: 0 1px 4px rgba(0,0,0,0.065);
+            box-shadow: 0 1px 4px rgba(0,0,0,0.065);
+            -webkit-border-radius: 4px 0px 0px 4px;
+            -moz-border-radius: 4px 0px 0px 4px;
+            border-radius: 4px 0px 0px 4px;
+            box-sizing: border-box;
+        }
+            .outlineLeft p{
+                text-align:center;
+
+            }
+         .outlineRight {
+                width: 92%;
+                min-width: 901px;
+                height: 90%;
+                min-height: 330px;
+                float: left;
+                color: #999;
+                background: white;
+                border: 1px solid #d4d4d4;
+                border-left: none;
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff2f2f2', GradientType=0);
+                *zoom: 1;
+                -webkit-box-shadow: 0 1px 4px rgba(0,0,0,0.065);
+                -moz-box-shadow: 0 1px 4px rgba(0,0,0,0.065);
+                box-shadow: 0 1px 4px rgba(0,0,0,0.065);
+                -webkit-border-radius: 0px 4px 4px 0px;
+                -moz-border-radius: 0px 4px 4px 0px;
+                border-radius: 0px 4px 4px 0px;
+                box-sizing: border-box;
+            }
+
+         
+
+    </style>
+
+
+</head>
+<body>
+
+    <div id="myexample">
+        <nav class="navbar navbar-default" role="navigation">
+            <ul class="nav navbar-nav">
+                <li><div id="logo"></div><a class="tCloud"></a></li>
+                <li><a href="../home.html"><div class="icon-nav0"></div><span>首 页</span></a></li>
+                <li><a href="index.html"><div class="icon-nav1"></div><span>生产监控</span></a></li>
+                <li class="active"><a href="production.html"><div class="icon-nav2"></div><span>生产管理</span></a></li>
+                <li><a href="equipment.html"><div class="icon-nav3"></div><span>设备管理</span></a></li>
+                <li><a href="afterSale.html"><div class="icon-nav4"></div><span>设备维护</span></a></li>
+                <li><a href="mould.html"><div class="icon-nav5"></div><span>工艺管理</span></a></li>
+                <li><a href="statistics.html"><div class="icon-nav6"></div><span>数据统计</span></a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a id="action-1" href="#">信息</a></li>
+                        <li><a>退出</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="content">
+        <div class="side-bar">
+            <div class="side-bar-inner">
+                <li class="active"> <a href="index.html"><i class="icon-chevron-right"></i>塑 机</a> </li>
+                <li> <a href="analysisAlarm.html"><i class="icon-chevron-right"></i>统计分析</a> </li>
+                <li> <a href="mould.html"><i class="icon-chevron-right"></i>成型工艺</a> </li>
+                <li> <a href="auxiliary.html"><i class="icon-chevron-right"></i>辅助设备</a> </li>
+            
+                <!--<li> <a href="gps.html"><i class="icon-chevron-right"></i>GPS</a> </li>-->
+                
+                </ul>
+            </div>
+        </div>
+        <div class="outline">
+            <div class="outlineLeft"> <p>机 器</p></div>
+            <div class="outlineRight">
+                <div id="myChart" style="width:98%;height:100%;float:left;"></div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="filter-bar bar-background" style="display:none">
+            <ul>
+                <li> <div><i class="icon-th-list"></i></div></li>
+                <li class="active">
+                    <div class="square"></div>
+                    连 接
+                </li>
+                <li>
+                    <div class="square"></div>
+                    断 开
+                </li>
+                <li>
+                    <div class="square"></div>
+                    报 警
+                </li>
+                <li>
+                    <div class="square"></div>
+                    空 闲
+                </li>
+                <li>
+                    <div class="search">
+                        <input type="text" name="searchIpt" value="" />
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        </div>
+
+</body>
+</html>
+<script src="js/machine.js"></script>

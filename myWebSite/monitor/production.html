@@ -1,0 +1,245 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>index</title>
+    <!--Jquery-->
+    <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+
+
+    <!--bootstrap-->
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+    <!-- public -->
+    <link href="css/public.css" rel="stylesheet" media="screen" />
+    <script src="js/public.js"></script>
+    <script src="js/echarts.min.js"></script>
+
+</head>
+<body>
+
+
+    <div id="myexample">
+        <nav class="navbar navbar-default" role="navigation">
+            <ul class="nav navbar-nav">
+                <li><div id="logo"></div><a class="tCloud"></a></li>
+                <li><a href="../home.html"><div class="icon-nav0"></div><span>首 页</span></a></li>
+                <li><a href="index.html"><div class="icon-nav1"></div><span>生产监控</span></a></li>
+                <li class="active"><a href="production.html"><div class="icon-nav2"></div><span>生产管理</span></a></li>
+                <li><a href="equipment.html"><div class="icon-nav3"></div><span>设备管理</span></a></li>
+                <li><a href="afterSale.html"><div class="icon-nav4"></div><span>设备维护</span></a></li>
+                <li><a href="mould.html"><div class="icon-nav5"></div><span>工艺管理</span></a></li>
+                <li><a href="statistics.html"><div class="icon-nav6"></div><span>数据统计</span></a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a id="action-1" href="#">信息</a></li>
+                        <li><a>退出</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+<div class="content">
+<div class="side-bar">
+  <ul class="side-bar-inner">
+    <li class="active"> <a href=#><i class="icon-chevron-right"></i>生产进度</a> </li>
+     <li> <a href="productionSchedule.html"><i class="icon-chevron-right"></i>生产排班</a> </li>
+    <li> <a href=#><i class="icon-chevron-right"></i>排班记录</a> </li>
+      <li> <a href=#><i class="icon-chevron-right"></i>基础数据</a> </li>
+
+    </ul>
+</div>
+
+
+    <div id="productionData" style="float: left; width: 80%; height: 250px;margin-top:20px">
+        <!--<div class="panel panel-default">
+            <div class="panel-body">
+                <div class="histogram" style="width:100%;height:280PX;float:left"></div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="histogram" style="width:100%;height:280PX;float:left"></div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="histogram" style="width:100%;height:280PX;float:left"></div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="histogram" style="width:100%;height:280PX;float:left"></div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="histogram" style="width:100%;height:280PX;float:left"></div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="histogram" style="width:100%;height:280PX;float:left"></div>
+            </div>
+        </div>-->
+    </div>
+
+
+    
+
+
+
+
+
+</div>
+        
+
+</body>
+</html>
+<script>
+    $(document).ready(function () {
+
+        var productionData = document.getElementById("productionData");
+        for (var i = 0; i < 5; i++) {
+            var elt = document.createElement("div");
+            var elt2 = document.createElement("div");
+            var elt3 = document.createElement("div");
+
+            elt.className = "histogram production";
+            elt2.appendChild(elt);
+            elt2.className = "panel-body";
+            elt3.appendChild(elt2);
+            elt3.className = "panel panel-default";
+            elt3.style="width:100%;height:280px;float:left";
+            productionData.appendChild(elt3);
+
+
+        }
+        var option = {
+            title: {
+                text: "H1140-0005",
+                subtext: '单位：小时',
+                top: 'top',
+                left: 'left'
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                    type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                }
+            },
+            legend: {
+                //data: ['直接访问', '邮件营销', '联盟广告', '视频广告', '搜索引擎']
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis: {
+                type: 'value'
+            },
+            yAxis: {
+                type: 'category',
+                data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+            },
+            toolbox: {
+                feature:
+                    {
+                        saveAsImage: {},
+                        dataView: {
+                            show: true,
+                            title: '数据',
+                            readOnly: false,
+                            lang: ['数据', '关闭', '刷新'],
+                            backgroundColor: '#fff',
+                            textareaColor: '#fff',
+                            textareaBorderColor: '#333',
+                            textColor: '#000',
+                            buttonColor: '#c23531',
+                            buttonTextColor: '#fff'
+                        }
+                    }
+            },
+            series: [
+                {
+                    name: '任务一',
+                    type: 'bar',
+                    stack: '总量',
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'insideRight'
+                        }
+                    },
+                    data: [3.20, 3.02, 3.01, 3.34, 3.90, 3.30, 3.20]
+                },
+                {
+                    name: '任务二',
+                    type: 'bar',
+                    stack: '总量',
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'insideRight'
+                        }
+                    },
+                    data: [1.20, 1.32, 1.01, 1.34, 9.0, 2.30, 2.10]
+                },
+                {
+                    name: '任务三',
+                    type: 'bar',
+                    stack: '总量',
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'insideRight'
+                        }
+                    },
+                    data: [2.20, 1.82, 1.91, 2.34, 2.90, 3.30, 3.10]
+                },
+                {
+                    name: '任务四',
+                    type: 'bar',
+                    stack: '总量',
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'insideRight'
+                        }
+                    },
+                    data: [1.50, 2.12, 2.01, 1.54, 1.90, 3.30, 4.10]
+                },
+                {
+                    name: '任务五',
+                    type: 'bar',
+                    stack: '总量',
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'insideRight'
+                        }
+                    },
+                    data: [8.20, 8.32, 9.01, 9.34, 12.90, 13.30, 13.20]
+                }
+            ]
+        };
+        $(".histogram").each(function (index, element) {
+            if (index % 2)
+                option.title.text = "H1140-000" + index;
+            else
+                option.title.text = "E1023-000" + index / 2;
+            var histogram = echarts.init(element);
+            histogram.setOption(option, true);
+        })
+
+    });
+   
+
+
+</script>
